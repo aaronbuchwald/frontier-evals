@@ -13,7 +13,7 @@ async def main(gpqa: GPQAEval, runner: RunnerArgs) -> None:
 
     ```bash
     $ python -m nanoeval.examples.gpqa_simple \
-        ...solver=nanoeval.solvers.mcq_api:MCQAPISolver \
+        ...solver=nanoeval.solvers.mcq_api:OpenAIAPIMCQSolver \
         ...solver.model=gpt-4o
     ```
     """
