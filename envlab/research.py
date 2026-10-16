@@ -137,7 +137,7 @@ def generator_prompt(idea: str, format_doc: str, pkg: PackageConfig, task_id: st
 {feedback}
 
 ## What to write
-Task id: `{task_id}`. Write these files under `{out_dir}/`:
+Task id: `{task_id}`. {"The existing task files are already in `" + out_dir + "/`; read them all first, keep what works, and revise in place (edit files, add documents or criteria, sharpen criteria that the solver passed trivially, add fair criteria for issues a careful lawyer would address but the solver missed, add negative criteria for errors the solver actually made). Keep the task realistic: never add obscure trivia or trick wording just to lower the pass rate." if existing_task_dir else "Write these files under `" + out_dir + "/`:"}
 - `task.yaml` (id, title, package, instruction, deliverables, workspace manifest with roles and descriptions, metadata incl. edge_case)
 - `criteria.yaml`
 - `workspace/...` the matter documents (emails, contract excerpts, memos, statutory excerpts, peripheral files). Make them realistic, dated, internally consistent, and long enough to require real reading. Use fictional parties.
@@ -157,12 +157,69 @@ def _qa_prompt(task: TaskSpec) -> str:
             "Review the task as described in your instructions and return the structured assessment.")
 
 
+def _baseline_record(seed_dir: Path, baseline_runs: list[Path], solver: AgentConfig, env: EnvConfig,
+                     verifier: VerifierConfig, pkg: PackageConfig, solver_runs: int, runs_root: Path,
+                     log) -> IterationRecord:
+    task = TaskSpec.load(seed_dir)
+    task.metadata.min_criteria = pkg.min_criteria
+    problems = task.validate_spec()
+    solver_results: list[dict[str, Any]] = []
+    per_crit: dict[str, list[bool]] = {}
+    solver_cost = judge_cost = 0.0
+    if baseline_runs:
+        from .jev import GradeReport
+        for rd in baseline_runs:
+            rd = Path(rd)
+            meta = json.loads((rd / "run.json").read_text())
+            g = GradeReport.from_dict(json.loads((rd / "grade.json").read_text()))
+            deliv = rd / "sandbox" / meta["env"]["deliverable_dir"]
+            excerpt = ""
+            for name in task.deliverables:
+                if (deliv / name).exists():
+                    excerpt = (deliv / name).read_text(errors="replace")
+                    break
+            solver_results.append({**meta, "deliverable_excerpt": excerpt[:8000]})
+            for r in g.results:
+                per_crit.setdefault(r.id, []).append(r.passed)
+    else:
+        for n in range(solver_runs):
+            log(f"[research]   baseline solver run {n + 1}/{solver_runs} on seed task")
+            rr = run_task(seed_dir, solver, env, verifier, runs_root=runs_root, label=f"seed{n + 1}")
+            solver_cost += rr.agent_cost_usd
+            judge_cost += rr.grade.cost_usd if rr.grade else 0.0
+            excerpt = next(iter(rr.deliverables.values()), "") if rr.deliverables else ""
+            solver_results.append({**rr.summary(), "deliverable_excerpt": excerpt[:8000]})
+            if rr.grade:
+                for r in rr.grade.results:
+                    per_crit.setdefault(r.id, []).append(r.passed)
+    prs = [s["pass_rate"] for s in solver_results if s.get("pass_rate") is not None]
+    mean_pr = statistics.fmean(prs) if prs else None
+    reasons = [f"format: {p}" for p in problems]
+    if mean_pr is None:
+        reasons.append("no baseline grade available")
+    elif mean_pr >= pkg.target_max_pass_rate:
+        reasons.append(f"too easy: solver mean pass rate {mean_pr:.0%} >= target max {pkg.target_max_pass_rate:.0%}")
+    return IterationRecord(iteration=0, task_dir=str(seed_dir), validation_problems=problems,
+                           solver_runs=solver_results, mean_pass_rate=mean_pr,
+                           per_criterion_pass={k: sum(v) / len(v) for k, v in per_crit.items()},
+                           qa=None, accepted=not reasons, reasons=reasons, generator_cost_usd=0.0,
+                           solver_cost_usd=solver_cost, judge_cost_usd=judge_cost, qa_cost_usd=0.0)
+
+
 def run_research(*, idea_file: Path, package_dir: Path, generator: AgentConfig, solver: AgentConfig,
                  verifier: VerifierConfig, env: EnvConfig, qa_agent: AgentConfig | None = None,
                  iterations: int = 3, solver_runs: int = 1, task_id: str | None = None,
                  target_max_pass_rate: float | None = None, min_criteria: int | None = None,
                  skip_qa: bool = False, runs_root: Path | None = None, out_root: Path | None = None,
+                 seed_task: Path | None = None, baseline_runs: list[Path] | None = None,
                  log=print) -> ResearchLog:
+    """Run the research loop.
+
+    ``seed_task``: start from an existing task directory and have the generator *revise* it
+    (harden it) instead of authoring from scratch. ``baseline_runs``: existing run directories
+    for the seed task (from ``envlab run``) whose grades are used as iteration-0 feedback so the
+    solver is not re-run on the seed; if omitted, the solver is run on the seed first.
+    """
     pkg = PackageConfig.load(package_dir / "package.yaml")
     if target_max_pass_rate is not None:
         pkg.target_max_pass_rate = target_max_pass_rate
@@ -184,6 +241,19 @@ def run_research(*, idea_file: Path, package_dir: Path, generator: AgentConfig, 
 
     prev: IterationRecord | None = None
     best: tuple[float, Path] | None = None
+    if seed_task is not None:
+        seed_dir = session_dir / "iter0" / "task"
+        shutil.copytree(seed_task, seed_dir, ignore=shutil.ignore_patterns(".envlab_debug.json"))
+        prev = _baseline_record(seed_dir, baseline_runs or [], solver, env, verifier, pkg, solver_runs,
+                                runs_root or (session_dir / "iter0" / "runs"), log)
+        rlog.iterations.append(prev)
+        (session_dir / "iter0" / "iteration.json").write_text(json.dumps(asdict(prev), indent=2, default=str))
+        mp = prev.mean_pass_rate
+        best = ((0.0 if mp is None else 1.0 - mp) - 0.1 * len(prev.validation_problems), seed_dir)
+        log(f"[research]   baseline on seed task: mean_pass_rate={mp} reasons={prev.reasons}")
+        if prev.accepted:
+            rlog.accepted = True
+            iterations = 0
     for it in range(1, iterations + 1):
         it_dir = session_dir / f"iter{it}"
         it_dir.mkdir(exist_ok=True)

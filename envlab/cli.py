@@ -157,8 +157,10 @@ def new(package_dir, task_id, title):
 @click.option("--skip-qa", is_flag=True)
 @click.option("--runs-root", type=click.Path(file_okay=False), default=None)
 @click.option("--out-root", type=click.Path(file_okay=False), default=None, help="Where candidate tasks go (default <package>/candidates).")
+@click.option("--seed-task", type=click.Path(exists=True, file_okay=False), default=None, help="Revise/harden an existing task dir instead of authoring from scratch.")
+@click.option("--baseline-run", "baseline_runs", multiple=True, type=click.Path(exists=True, file_okay=False), help="Existing graded run dir(s) of the seed task to use as iteration-0 feedback (repeatable).")
 def research(idea_file, package_dir, generator_path, solver_path, verifier_path, qa_path, env_path, iterations,
-             solver_runs, task_id, target_max_pass_rate, min_criteria, skip_qa, runs_root, out_root):
+             solver_runs, task_id, target_max_pass_rate, min_criteria, skip_qa, runs_root, out_root, seed_task, baseline_runs):
     """Idea + edge case -> generate task (model A) -> solve in sandbox (model B) -> Jev grade -> QA -> revise."""
     from .research import run_research
     rlog = run_research(
@@ -167,6 +169,7 @@ def research(idea_file, package_dir, generator_path, solver_path, verifier_path,
         qa_agent=AgentConfig.load(qa_path) if qa_path else None, iterations=iterations, solver_runs=solver_runs,
         task_id=task_id, target_max_pass_rate=target_max_pass_rate, min_criteria=min_criteria, skip_qa=skip_qa,
         runs_root=Path(runs_root) if runs_root else None, out_root=Path(out_root) if out_root else None,
+        seed_task=Path(seed_task) if seed_task else None, baseline_runs=[Path(b) for b in baseline_runs],
         log=lambda m: console.print(f"[dim]{m}[/]"),
     )
     console.print(f"\n[bold]accepted={rlog.accepted}[/]  best task: {rlog.best_task_dir}")
