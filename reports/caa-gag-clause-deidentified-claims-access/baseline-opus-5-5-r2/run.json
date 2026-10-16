@@ -1,0 +1,62 @@
+{
+  "run_dir": "runs/20261016T233803Z-caa-gag-clause-deidentified-claims-access-opus-5-5-r2",
+  "task_id": "caa-gag-clause-deidentified-claims-access",
+  "agent": "opus-5-5",
+  "agent_model": "claude-opus-5-5",
+  "agent_cost_usd": 1.5683,
+  "agent_error": null,
+  "pass_rate": 1.0,
+  "n_passed": 22,
+  "n_criteria": 22,
+  "all_pass": true,
+  "task_passed": true,
+  "judge_model": "claude-fable-5-1",
+  "judge_cost_usd": 1.3426,
+  "env": {
+    "name": "document-workspace",
+    "runs_root": "runs",
+    "deliverable_dir": "deliverables",
+    "workspace_read_only": true,
+    "allow_network": false,
+    "include_file_manifest": true,
+    "prompt_template": "You are an associate at a law firm. A partner has sent you the request below. The matter files are in the `workspace/` directory of the current working directory; this is a closed universe - rely only on those files and your own legal knowledge, and do not assume facts that are not in them.\n\nWrite each deliverable as a file in `{deliverable_dir}/` (create the directory if needed). Required deliverables: {deliverables}.\n\nPartner request:\n\n{instruction}\n\n{manifest}",
+    "inline_fallback": true
+  },
+  "agent_config": {
+    "name": "opus-5-5",
+    "backend": "claude-cli",
+    "model": "claude-opus-5-5",
+    "effort": "high",
+    "system_prompt": null,
+    "tools": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Write",
+      "Edit"
+    ],
+    "max_turns": 60,
+    "max_budget_usd": 6.0,
+    "timeout_s": 1800,
+    "extra": {
+      "permission_mode": "acceptEdits"
+    }
+  },
+  "verifier": {
+    "name": "jev-fable",
+    "backend": "claude-cli",
+    "model": "claude-fable-5-1",
+    "effort": "high",
+    "mode": "batched",
+    "samples": 1,
+    "aggregate": "majority",
+    "include_grader_notes": true,
+    "include_workspace": true,
+    "max_workspace_chars": 120000,
+    "all_pass_required": false,
+    "pass_threshold": 1.0,
+    "timeout_s": 1200,
+    "extra": {}
+  },
+  "finished_at": "2026-10-16T23:47:59.339981+00:00"
+}

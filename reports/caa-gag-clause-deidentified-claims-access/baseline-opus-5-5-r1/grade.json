@@ -1,0 +1,305 @@
+{
+  "task_id": "caa-gag-clause-deidentified-claims-access",
+  "verifier": "jev-fable",
+  "judge_model": "claude-fable-5-1",
+  "results": [
+    {
+      "id": "c01",
+      "text": "Identifies ERISA section 724 (29 U.S.C. 1185m), enacted by section 201 of Division BB of the Consolidated Appropriations Act, 2021, as the provision that governs Halvorsen's self-funded ERISA plan (references to the parallel PHSA 2799A-9 / IRC 9824 provisions are acceptable in addition, but a memo that relies only on the PHSA or on \"the No Surprises Act\" without identifying the ERISA provision fails).",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo identifies ERISA \u00a7 724 / 29 U.S.C. \u00a7 1185m as the governing provision for the self-funded plan, with the PHSA and IRC parallels noted in addition.",
+      "evidence": "\"Article 9 of the Meridian ASA contains several provisions that the gag clause rule in ERISA \u00a7 724 (29 U.S.C. \u00a7 1185m; parallel PHSA \u00a7 2799A-9 and IRC \u00a7 9824) prohibits.\"",
+      "category": "citation",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c02",
+      "text": "Concludes that Section 9.4's requirement of Meridian's prior written consent before the Plan shares claims data with consultants or auditors is a prohibited restriction under section 724(a)(1)(C) on sharing data with, or directing that data be shared with, a business associate.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo squarely concludes \u00a7 9.4's consent requirement is prohibited under \u00a7 724(a)(1)(C) as applied to business associates, with high confidence.",
+      "evidence": "\"Section 9.4 (Third-Party Recipients) \u2014 prohibited (high confidence)... The provision tracks \u00a7 724(a)(1)(C). Consultants, auditors, actuaries, brokers and successor TPAs that handle plan data are classic business associates. The provision restricts both 'sharing' and 'directing that such data be shared', the two acts (C) protects.\"",
+      "category": "issue_spotting",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c03",
+      "text": "Concludes that Section 9.5's bar on the Plan Sponsor disclosing provider-specific reimbursement rates, allowed amounts, or provider quality ratings to participants, network providers, or referring providers is prohibited by section 724(a)(1)(A).",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo concludes \u00a7 9.5's bar on disclosing rates/allowed amounts/quality ratings to participants and referring providers (and network providers to the extent they refer) is prohibited by \u00a7 724(a)(1)(A), and expressly rejects the member-portal cost-estimate sentence as a cure.",
+      "evidence": "\"Section 9.5 (Provider Rate Confidentiality) \u2014 prohibited in part (high confidence)... \u00a7 724(a)(1)(A) expressly protects providing 'provider-specific cost or quality of care information ...' to referring providers and participants... Section 9.5 restricts exactly that. The final sentence (Meridian will provide cost estimates 'to the extent required by applicable transparency laws') does not cure the bar on the Plan itself providing the information.\"",
+      "category": "issue_spotting",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c04",
+      "text": "Explains that the section 724(a)(2) exception for \"reasonable restrictions on the public disclosure\" applies only to the provider-specific cost and quality information described in paragraph (1)(A) and therefore cannot be used to justify restrictions on access to or sharing of de-identified claims data under (1)(B) or (1)(C).",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo states the (a)(2) carve-out is limited to (A) information and draws the consequence that it does not reach (B) or (C).",
+      "evidence": "\"The only express carve-out lets a provider or service provider place 'reasonable restrictions on the public disclosure' of (A) information (\u00a7 724(a)(2)). It does not extend to (B) or (C).\" and \"The only carve-out concerns public disclosure of (A) information.\"",
+      "category": "legal_analysis",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c05",
+      "text": "Concludes that Section 9.6's audit limits (once per plan year, a sample capped at 250 claims selected by Meridian's methodology, on Meridian's premises or a view-only portal) are impermissible restrictions on electronic access to de-identified claims data, not merely commercially unfavorable terms.",
+      "passed": false,
+      "votes": [
+        false
+      ],
+      "rationale": "The memo concludes only that \u00a7 9.6(b) (Competitor/TPDUA condition) is likely prohibited; it expressly treats the 250-claim cap, Meridian's sampling methodology, once-per-year frequency, and on-premises/view-only limits as a 'gray area' and 'on the better view, a commercial matter', with low\u2013moderate confidence. It does not reach the required conclusion that these limits are prohibited restrictions on electronic access rather than merely commercially unfavorable terms.",
+      "evidence": "\"The sample cap and view-only limits are a gray area. They are vulnerable if Meridian uses them to cap the auditor's access to claims data, but the statute does not itself grant audit rights. ... Low\u2013moderate ((a), (c))\"; \"Contractual limits on Meridian's audit cooperation are, on the better view, a commercial matter.\"",
+      "category": "issue_spotting",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c06",
+      "text": "Acknowledges that section 724 and the Departments' guidance do not prescribe a required format, delivery mechanism, turnaround time, or price for electronic access, and accordingly frames the fee, 180-day lag, and standard-format terms of Section 9.3 as a question of whether they \"directly or indirectly restrict\" access rather than asserting that any fee or delay is a per se violation.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo explicitly acknowledges the statute's silence on format, fees and timing, declines to treat any fee or delay as per se unlawful, and analyzes the \u00a7 9.3 terms under the 'directly or indirectly restrict' standard.",
+      "evidence": "\"The statute does not specify format, fees, or timing, and Delacroix is right about that much. But the statute does specify content.\" and \"We are not aware of guidance or case law holding that a reasonable, cost-based fee or a reasonable delivery period is itself a gag clause. A modest charge for a genuinely bespoke format is probably defensible...\"",
+      "category": "legal_analysis",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c07",
+      "text": "Concludes that the Section 9.3 terms, taken together (claim-level allowed amounts and provider identifiers available only as a paid \"custom extract\" at $18,500 plus $0.11 per line, a 180-day delivery window running from an acceptance for which there is no deadline, and Meridian's right to decline extracts that would reveal \"Proprietary Information\"), operate as an indirect restriction on per-claim access to the data elements section 724(a)(1)(B) expressly lists, and are therefore likely prohibited.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo concludes the \u00a7 9.3 package (statutory fields excluded from standard access, open-ended acceptance, 180-day lag, unilateral fee, decline right) operates as an indirect restriction on the enumerated per-claim elements and is likely prohibited; the decline right is treated as a direct restriction.",
+      "evidence": "\"Combined, they make access to the statutorily enumerated fields contingent on Meridian's discretion and timetable, which is an indirect restriction.\" and \"The decline right is a direct restriction... Any extract containing allowed amounts therefore can be declined under the contract's own definitions.\"",
+      "category": "legal_analysis",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c08",
+      "text": "States that Meridian's classification of allowed amounts and provider-specific rates as \"Meridian Proprietary Information\" cannot override section 724, because the statute expressly lists allowed amounts and provider name and clinical designation among the per-claim elements the Plan must be able to access.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo connects the 'Proprietary Information' label to the statutory enumeration of allowed amount and provider name and rejects it as a basis for restriction.",
+      "evidence": "\"The statute names 'the allowed amount' and 'provider information, including name' as data the plan must be free to access 'on a per claim basis.' A clause allowing Meridian to refuse those elements because they are Meridian's proprietary information squarely 'restricts' the Plan's access.\"",
+      "category": "legal_analysis",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c09",
+      "text": "Correctly explains that \"de-identified\" in section 724(a)(1)(B) refers to removal of participant and beneficiary identifiers under the HIPAA de-identification standard (45 C.F.R. 164.514), and does not suggest that provider identities, provider NPIs, or provider-level pricing must or may be removed to make the data \"de-identified.\"",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo correctly describes de-identification as removal of individual (participant) identifiers under 45 C.F.R. \u00a7 164.514 safe harbor/expert determination and expressly states that provider identifiers remain.",
+      "evidence": "\"De-identified data under 45 C.F.R. \u00a7 164.514(a)\u2013(b) is not PHI. Under the safe harbor, all date elements 'directly related to an individual'... must be reduced to year... Provider identifiers (NPI, provider name) are not individual identifiers and may remain.\"",
+      "category": "legal_analysis",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c10",
+      "text": "Explains that section 724 is directed at the Plan (the Plan \"may not enter into\" an agreement containing such restrictions) so that compliance and attestation exposure rests with the Plan and its fiduciaries regardless of who drafted the ASA or what Meridian's compliance team has represented, and does not describe Meridian as the party that is itself in violation of section 724.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo places the statutory obligation and attestation exposure on the Plan and states Meridian is not directly bound; nothing in the memo states that Meridian is itself violating \u00a7 724.",
+      "evidence": "\"The duty falls on the Plan. The statute regulates the plan's act of entering into the agreement. Meridian is not directly bound by \u00a7 724. The Plan bears the compliance risk and the attestation obligation.\"",
+      "category": "legal_analysis",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c11",
+      "text": "Advises that the Section 9.7 compliance-with-law savings clause does not cure the prohibited provisions for attestation purposes, and recommends that the offending language be amended or deleted rather than relying on Section 9.7.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo rejects the \u00a7 9.7 'no gag clause by definition' argument on multiple grounds (court/agency trigger, 'access' only, Meridian applying the clauses) and recommends amendment of the offending provisions.",
+      "evidence": "\"Section 9.7 does not cure the problem... The second sentence works only after litigation. Provisions are 'deemed modified' only after 'a court or governmental authority' so determines. Until then the restrictions operate in full.\" and \"a short-form letter amendment (permitted by \u00a7 12.3) that removes the gag clauses\"",
+      "category": "legal_analysis",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c12",
+      "text": "Flags that the December 2024 and December 2025 attestations were submitted as unqualified \"in compliance\" attestations while Article 9 was in force, identifies this as a compliance exposure for the Plan, and recommends a documented remediation approach for the prior attestations (for example documenting the reliance on Meridian's confirmation, correcting the record with the Departments or in the next attestation's Additional Information field, and preserving a remediation file).",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo flags the 2024/2025 unqualified attestations as likely inaccurate, treats them as an exposure, and recommends a concrete remediation approach (document reliance, correct the record in the 2026 Additional Information, consider EBSA outreach), without asserting a formal amendment mechanism exists.",
+      "evidence": "\"If our Part IV analysis is right, both statements were inaccurate.\"; \"Do not try to 'withdraw' or refile them now. We are not aware of a formal amendment mechanism... Correct the record in the 2026 submission's Additional Information... Document the Plan's good-faith reliance in the Committee's files. Decide by mid-December... whether to send a short voluntary letter to EBSA.\"",
+      "category": "recommendation",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c13",
+      "text": "Advises that Halvorsen must still submit the attestation due December 31, 2026 and, if Meridian has not amended Article 9 by then, must disclose the non-compliant provisions and the steps taken to remove them in the attestation's \"Additional Information\" field, consistent with the Departments' FAQ guidance, rather than skipping the attestation or attesting unqualified compliance.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo advises submitting the 2026 attestation in both scenarios, not attesting unqualified compliance, and using the Additional Information field to identify the provisions, Meridian's refusal, and steps taken if unremediated.",
+      "evidence": "\"Scenario 2 \u2014 Meridian refuses or stalls. Submit identifying the provisions, stating that the Plan requested removal on [date] and Meridian declined, and describing the Plan's ongoing steps\"; \"The Plan should not submit an unqualified 'in compliance' attestation for this period.\"",
+      "category": "recommendation",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c14",
+      "text": "Recommends that the Plan put HIPAA business associate agreements in place with Northgate and Claimsight (or confirm their business associate status) and direct Meridian to furnish the de-identified data to them, and concludes that Meridian cannot rely on the \"Competitor\" definition or its consent right in Section 9.4 to block sharing with a business associate.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo recommends BAAs with Northgate and Claimsight before any data moves, provides for directing Meridian to deliver data directly to designated recipients, and concludes the Competitor veto cannot lawfully block sharing with a business associate (while allowing reasonable confidentiality protections).",
+      "evidence": "\"Execute Plan BAAs with Northgate and Claimsight before any data moves.\"; \"our view is that the consent/Competitor veto is a prohibited gag clause as applied to the Plan's business associate... It is not a lawful reason to prevent the Plan from using a consultant of its choice.\"; Appendix A \u00a7 9.4(a): \"Meridian shall deliver such data directly to any such recipient designated by Plan Sponsor.\"",
+      "category": "recommendation",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c15",
+      "text": "Proposes amendment terms for Article 9 that (a) delete the consent requirement for sharing with the Plan's business associates and (b) specify the per-claim data elements to be furnished, expressly including allowed amounts and provider names or identifiers.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "Appendix A deletes the consent requirement for sharing with business associates (replacing it with a Plan-side confidentiality undertaking) and enumerates per-claim elements including allowed amount and provider name/NPI.",
+      "evidence": "\"The Plan and Plan Sponsor may share... with any business associate or service provider... without Meridian's consent\"; \"(i) financial information, including billed charges, the Allowed Amount... (ii) provider information, including rendering and billing provider name, NPI and clinical designation; (iii) service codes\"",
+      "category": "recommendation",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c16",
+      "text": "Proposes amendment terms that address timing and cost of data access, by specifying a defined reasonable delivery timeframe for claim-level extracts and limiting any charge to a reasonable cost-based fee (or no fee for standard electronic access).",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "Appendix A \u00a7 9.3(b) and (d) specify a 30/45-day delivery period and limit fees to no charge for standard extracts with custom extracts at reasonable, capped cost.",
+      "evidence": "\"Meridian shall deliver Statutory Data within thirty (30) days after request (forty-five (45) days for requests covering more than twelve months of history)\"; \"Meridian shall provide Statutory Data without charge [up to two (2) full extracts per Plan Year...]. Additional or genuinely custom extracts... shall be charged at Meridian's reasonable cost, quoted in advance, and not to exceed $[ ] per extract.\"",
+      "category": "recommendation",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c17",
+      "text": "Recommends that the amendment require Meridian to represent that none of its downstream agreements (including Meridian Choice network provider contracts) restricts the Plan's rights under section 724, or otherwise addresses the risk that a downstream Meridian agreement could indirectly restrict the Plan.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo flags that Meridian's network provider agreements have never been seen and proposes a representation, warranty and covenant covering downstream agreements with Network Providers.",
+      "evidence": "\"Meridian represents, warrants and covenants that neither this Agreement... nor any agreement between Meridian or its affiliates and any Network Provider, contains or will contain any provision that would directly or indirectly restrict the Plan...\" and \"Meridian's 2024 confirmation also covered its provider network agreements, which the Plan has never seen. The amendment should include a representation on those agreements.\"",
+      "category": "recommendation",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c18",
+      "text": "Connects the data request to the Committee's ERISA fiduciary duties, explaining that the duty to prudently select and monitor service providers and to ensure plan expenses are reasonable supports obtaining the claims data, and recommends that the Committee document its efforts.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo ties the data request to the Committee's duty to monitor service providers and to the reasonableness of compensation under \u00a7 408(b)(2), and recommends documenting the process.",
+      "evidence": "\"Duty to monitor. The Committee has authority and responsibility to 'select, monitor and replace service providers'... The minutes should show a deliberate, documented process\"; \"A service arrangement with a party in interest is exempt under ERISA \u00a7 408(b)(2) only if compensation is reasonable. The Committee cannot assess that without data.\"",
+      "category": "legal_analysis",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c19",
+      "text": "Identifies potential excise tax exposure under Internal Revenue Code section 4980D ($100 per day per affected individual) for a group health plan's failure to satisfy the Code's parallel gag clause provision (IRC 9824), as part of the Plan Sponsor's exposure analysis.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo identifies IRC \u00a7 4980D excise tax exposure at $100/day/individual for a chapter 100 (\u00a7 9824) failure and references Form 8928 self-reporting.",
+      "evidence": "\"IRC \u00a7 4980D excise tax (the main quantifiable exposure). The tax. $100 per day per 'individual to whom such failure relates' for failures to meet chapter 100 requirements, which include \u00a7 9824.\"; \"Form 8928 self-reporting... needs to be evaluated with Halvorsen's tax advisers.\"",
+      "category": "legal_analysis",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c20",
+      "text": "Notes that the 90-day non-renewal notice deadline under Section 12.1 (October 2, 2026) has passed, so the ASA will renew for calendar 2027, and factors this into the recommended negotiating approach (for example relying on Meridian's exposure to a reported gag clause and the Plan's fiduciary posture rather than on a non-renewal threat, or considering Section 12.2 breach-based termination).",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The memo identifies that the October 2, 2026 notice deadline has passed and the ASA renews for 2027, and reshapes leverage around the law, Meridian's own positions, the attestation disclosure, \u00a7 12.2 breach notice, and the 2028 market check.",
+      "evidence": "\"The ASA has already renewed automatically for 2027 (the October 2, 2026 non-renewal date has passed). The Plan's leverage therefore comes from the law, from Meridian's own written positions, and from the 2028 market check, not from a threat to leave at year-end.\"; \"Termination for cause (\u00a7 12.2)... That is a credible escalation, not an opening move.\"",
+      "category": "fact_use",
+      "polarity": "positive",
+      "weight": 1.0
+    },
+    {
+      "id": "c21",
+      "text": "Relies on the Section 12.4 \"Changes in Law\" clause as the mechanism that obligates Meridian to amend the ASA, even though section 724 was enacted in December 2020 and is not a change in law enacted after the January 1, 2024 Effective Date.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "NEGATIVE criterion. The memo does not invoke \u00a7 12.4 as the lever; it expressly explains why 12.4 does not apply and uses \u00a7 12.3 instead.",
+      "evidence": "\"\u00a7 12.4 gives Meridian no basis to charge for this amendment. It covers only changes in law 'enacted after the Effective Date' (January 1, 2024). The CAA was enacted December 27, 2020.\"",
+      "category": "negative",
+      "polarity": "negative",
+      "weight": 1.0
+    },
+    {
+      "id": "c22",
+      "text": "Is formatted as a memorandum addressed to Dana Okafor and opens with an executive summary that states the bottom-line conclusions before the detailed analysis.",
+      "passed": true,
+      "votes": [
+        true
+      ],
+      "rationale": "The deliverable is formatted as a memorandum addressed to Dana Okafor and opens with an Executive Summary stating bottom-line conclusions before the detailed analysis.",
+      "evidence": "\"To: Dana Okafor, General Counsel, Halvorsen Industrial Group, Inc.\" ... \"## I. EXECUTIVE SUMMARY \u2014 Bottom line. In our view, Article 9 of the Meridian ASA contains several provisions that the gag clause rule in ERISA \u00a7 724... prohibits.\"",
+      "category": "format",
+      "polarity": "positive",
+      "weight": 1.0
+    }
+  ],
+  "pass_rate": 0.9545454545454546,
+  "weighted_pass_rate": 0.9545454545454546,
+  "all_pass": false,
+  "task_passed": false,
+  "n_criteria": 22,
+  "n_passed": 21,
+  "cost_usd": 1.3270329,
+  "judge_calls": 1,
+  "deliverable_sources": {
+    "memo.md": "file"
+  },
+  "error": null
+}
