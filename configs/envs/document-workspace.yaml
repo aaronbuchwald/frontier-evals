@@ -1,0 +1,8 @@
+# Closed-universe document workspace: the agent reads workspace/ (read-only) and writes deliverables/.
+name: document-workspace
+runs_root: runs
+deliverable_dir: deliverables
+workspace_read_only: true
+allow_network: false
+include_file_manifest: true
+inline_fallback: true

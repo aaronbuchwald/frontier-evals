@@ -1,0 +1,6 @@
+name: jev-mock
+backend: mock
+model: mock
+effort: null
+mode: batched
+samples: 1

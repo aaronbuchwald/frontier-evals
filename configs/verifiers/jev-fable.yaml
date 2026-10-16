@@ -1,0 +1,11 @@
+# Jev judge on Fable 5.1 (use when the solver is Opus 5.5 so judge != solver).
+name: jev-fable
+backend: claude-cli
+model: claude-fable-5-1
+effort: high
+mode: batched
+samples: 1
+aggregate: majority
+include_grader_notes: true
+include_workspace: true
+timeout_s: 1200

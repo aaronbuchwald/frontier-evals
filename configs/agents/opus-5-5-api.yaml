@@ -1,0 +1,7 @@
+# Same model, but via the Anthropic SDK (needs ANTHROPIC_API_KEY) and a minimal 3-tool sandbox loop.
+name: opus-5-5-api
+backend: anthropic
+model: claude-opus-5-5
+effort: high
+max_turns: 40
+timeout_s: 1800

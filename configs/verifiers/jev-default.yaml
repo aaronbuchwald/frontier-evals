@@ -1,0 +1,14 @@
+# Jev (judge-eval) grading: binary verdict per criterion from an LLM judge.
+name: jev-default
+backend: claude-cli
+model: claude-opus-5-5
+effort: high
+mode: batched            # one judge call covering all criteria (per_criterion = one call each)
+samples: 1               # independent judge samples per criterion
+aggregate: majority
+include_grader_notes: true
+include_workspace: true
+max_workspace_chars: 120000
+all_pass_required: false # Harvey LAB uses all-pass; keep false to see the criteria pass rate
+pass_threshold: 1.0
+timeout_s: 900

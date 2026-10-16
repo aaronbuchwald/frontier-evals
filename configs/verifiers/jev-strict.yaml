@@ -1,0 +1,12 @@
+# Stricter Jev config: 3 samples per criterion, graded one criterion per call, majority vote, all-pass task scoring.
+name: jev-strict
+backend: claude-cli
+model: claude-opus-5-5
+effort: high
+mode: per_criterion
+samples: 3
+aggregate: majority
+include_grader_notes: true
+include_workspace: true
+all_pass_required: true
+timeout_s: 900

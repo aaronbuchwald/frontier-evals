@@ -1,0 +1,9 @@
+name: fable-5-1
+backend: claude-cli
+model: claude-fable-5-1
+effort: high
+tools: [Read, Glob, Grep, Write, Edit]
+max_budget_usd: 15.0
+timeout_s: 3600
+extra:
+  permission_mode: acceptEdits

@@ -1,0 +1,9 @@
+# Offline agent for smoke tests of the pipeline. Set extra.response / extra.response_file to control the deliverable.
+name: mock
+backend: mock
+model: mock
+effort: null
+extra:
+  response: |
+    # Memorandum
+    Mock deliverable produced without any model call.

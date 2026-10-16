@@ -1,0 +1,7 @@
+name: sonnet-5-5
+backend: claude-cli
+model: claude-sonnet-5-5
+effort: high
+tools: [Read, Glob, Grep, Write, Edit]
+max_budget_usd: 4.0
+timeout_s: 1800

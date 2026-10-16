@@ -1,0 +1,10 @@
+name: harvey
+description: >
+  Legal advisory / transactional tasks in the style of Harvey's Legal Agent Benchmark (LAB):
+  single-turn partner request, closed-universe matter workspace, deliverable file(s), expert
+  rubric of atomic binary criteria graded by a Jev verifier.
+min_criteria: 10
+target_max_pass_rate: 0.75       # reference models must average < 75% criteria pass rate per task
+reference_models: ["gpt-6.1-sol", "claude-opus-5-5"]
+qa_pass_threshold: 0.70          # >= 70% of tasks must pass a practicing lawyer's QA (realistic + legally sound)
+format_doc: FORMAT.md

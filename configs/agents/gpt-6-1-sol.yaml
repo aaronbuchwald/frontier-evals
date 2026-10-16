@@ -1,0 +1,8 @@
+# Reference model named in the Harvey package spec. Needs OPENAI_API_KEY + `pip install openai`.
+# Adjust `model` to the exact model id your account exposes.
+name: gpt-6-1-sol
+backend: openai
+model: gpt-6.1-sol
+effort: high
+max_turns: 40
+timeout_s: 1800

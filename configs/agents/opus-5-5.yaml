@@ -1,0 +1,9 @@
+name: opus-5-5
+backend: claude-cli          # headless `claude -p`, fresh session per run, closed-universe tools only
+model: claude-opus-5-5
+effort: high
+tools: [Read, Glob, Grep, Write, Edit]
+max_budget_usd: 6.0
+timeout_s: 1800
+extra:
+  permission_mode: acceptEdits
