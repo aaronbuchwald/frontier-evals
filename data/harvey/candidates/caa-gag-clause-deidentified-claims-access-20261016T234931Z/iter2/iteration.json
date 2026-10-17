@@ -1,0 +1,118 @@
+{
+  "iteration": 2,
+  "task_dir": "data/harvey/candidates/caa-gag-clause-deidentified-claims-access-20261016T234931Z/iter2/task",
+  "validation_problems": [],
+  "solver_runs": [
+    {
+      "run_dir": "runs/research/20261017T003400Z-caa-gag-clause-deidentified-claims-access-opus-5-5-solve1",
+      "task_id": "caa-gag-clause-deidentified-claims-access",
+      "agent": "opus-5-5",
+      "agent_model": "claude-opus-5-5",
+      "agent_cost_usd": 2.4373,
+      "agent_error": null,
+      "pass_rate": 0.9556,
+      "n_passed": 43,
+      "n_criteria": 45,
+      "all_pass": false,
+      "task_passed": false,
+      "judge_model": "claude-fable-5-1",
+      "judge_cost_usd": 2.2909,
+      "deliverable_excerpt": "**PRIVILEGED AND CONFIDENTIAL \u2014 ATTORNEY-CLIENT COMMUNICATION / ATTORNEY WORK PRODUCT**\n**DRAFT FOR PARTNER REVIEW**\n\n# MEMORANDUM\n\n| | |\n|---|---|\n| **To** | Dana Okafor, General Counsel, Halvorsen Industrial Group, Inc. |\n| **From** | Lindqvist Vale (prepared for review by Margaret Lindqvist) |\n| **Date** | October 17, 2026 |\n| **Re** | Meridian ASA: CAA gag clause analysis, the Northgate/Claimsight data request, gag clause attestations, Meridian's proposed \"CAA Data Access Amendment,\" and related fiduciary issues, for the October 28, 2026 Benefits Committee meeting |\n\n---\n\n## I. EXECUTIVE SUMMARY\n\n**Bottom line:** The Meridian ASA very likely contains provisions that ERISA \u00a7 724 prohibits. The savings clause in Section 9.7 does not cure them. Meridian's proposed amendment fixes some of the problem but not all of it. As drafted, it would also cost the Plan more than it gives, because it includes a broad release and an admission of compliance, and it may not even take effect by December 31. **We recommend that the Committee not sign it by October 30.** Instead, the Committee should authorize us to take the matter to Meridian's legal department with a Plan-drafted amendment, a formal data demand, and a firm timetable tied to the December 31 attestation.\n\n**1. Does the ASA contain prohibited gag clauses? Yes, in several places.**\n\n| Provision | What it does | Our view | Confidence |\n|---|---|---|---|\n| **\u00a7 9.4** (third-party recipients) and **\u00a7 1.3** (\"Competitor\") | Requires Meridian's prior written consent before the Plan shares Claims Data with any consultant, auditor, actuary or successor administrator. Consent need only be \"reasonable\" for recipients that are *not* Competitors. \"Competitor\" includes anyone offering consulting **or claims auditing**, so every consultant and auditor is excluded. | Prohibited. This restricts sharing with, and directing data to, the Plan's business associates (\u00a7 724(a)(1)(C)). In practice it is access \"at the discretion of\" the TPA, which the Departments' guidance names as a gag clause. | **High** |\n| **\u00a7 9.5** (provider rate confidentiality) | Bars the Plan from disclosing provider-specific rates, allowed amounts or **quality ratings** to participants, network providers, referring providers or the public. | Prohibited as to **participants and referring providers** (\u00a7 724(a)(1)(A)). The restriction on **public** disclosure is permitted (\u00a7 724(a)(2)). | **High** |\n| **\u00a7 9.3** (claims data access) | The \"standard\" extract leaves out claim-level allowed amounts and provider identifiers, which the statute names specifically. Those fields are available only as a \"custom extract\" ($18,500 + $0.11/line, about $140\u2013160k). Delivery is 180 days after an acceptance that has no deadline. Meridian may **decline** any request that would reveal \"Meridian Proprietary Information,\" and that term is defined to include allowed amounts. | The discretionary right to decline is prohibited. Limiting the standard format so it leaves out statutory fields does not satisfy \u00a7 724(a)(1)(B). The fee and the open-ended timing are, in our view, an indirect restriction, but the law on fees and timing is unsettled. | **High** (decline right and missing fields); **Moderate** (fee and timing) |\n| **\u00a7 9.6** (claims audits) | Limits audits to 250 claims selected by Meridian's method, view-only, on Meridian's terms, by an auditor that is \"not a Competitor.\" No claims auditor can meet that test. | The auditor conditions restrict sharing with a business associate (likely prohibited). The limits on audit scope are mainly a contract and fiduciary-prudence problem rather than a \u00a7 724 violation. | **Moderate** |\n| **\u00a7\u00a7 12.5 and 9.8** (transition and survival) | Data handed over at transition is \"subject to Sections 9.4 and 9.5,\" and any successor TPA is by definition a Competitor. \u00a7\u00a7 9.4 and 9.5 survive for three years after termination. | This extends the \u00a7 9.4 restriction to a successor administrator, who is a business associate. Likely prohibited, and a serious practical obstacle to the 2028 market check. | **Moderate\u2013High** |\n| **\u00a7 9.7** (compliance with law) | A \"savings clause.\" | **It does not cure the problem** (Part IV.C). Its second sentence works only after \"a court or governmental authority\" rules. Its first sentence covers only the Plan's *access*, not the sharing and disclosure restrictions in \u00a7\u00a7 9.4 and 9.5. Meridian is in fact enforcing every one of the restrictions. If Meridian means \u00a7 9.7 seriously, it requires Meridian to deliver the data now. | **Moderate\u2013High** (we found no authority directly on point) |\n\nThe restrictions come from upstream. Section 4.3 of Continental's network access agreement with Meridian prohibits Meridian from *permitting any client plan* to disclose claim-level allowed amounts to \"any consultant, broker, actuary, auditor ... or competing administrator\" without Continental's consent \"in its sole discretion.\" It also requires Meridian to write those restrictions into every client ASA. Meridian's November 2024 written statement that its \"provider network agreements do not contain gag clauses\" is hard to reconcile with that text.\n\n**2. Northgate and Claimsight.** In our view, Meridian cannot lawfully refuse to deliver de-identified claims data to Northgate on the ground that Northgate is a \"Competitor.\" Once Northgate signs a business associate agreement (BAA) with the Plan, \u00a7 724(a)(1)(C) protects the Plan's right to share that data with it and to direct Meridian to send it. Meridian may ask for *reasonable* confidentiality protections, and Northgate has already offered them. Meridian may not keep a veto or require Meridian-approved purposes. The Plan has a second, independent contractual basis for the data: **BAA \u00a7 3.2** requires Meridian to make PHI available to the Plan \"or to a person designated by\" the Plan for health care operations, \"including the evaluation of Business Associate's performance,\" and the BAA controls over the ASA where they conflict (BAA \u00a7 9.1). We recommend:\n\n- a formal demand relying on \u00a7 724, ASA \u00a7 9.7 and BAA \u00a7 3.2;\n- BAAs with Northgate and Claimsight before any data moves;\n- direct, separate delivery from Meridian to each of Northgate and Claimsight;\n- restating the request to start January 1, 2024, the date Meridian's records begin; and\n- using the Cordell claims file, which the Plan already holds, as the 2023 baseline. The Cordell agreement must be checked for restrictions first.\n\nThe Claimsight audit should run in two phases: an electronic 100% screen of the \u00a7 724 data set, then targeted claim review in Meridian's systems. **The January benchmarking presentation is at risk under any scenario**, including if the Plan signs Meridian's amendment.\n\n**3. Attestations.** The 2024 and 2025 unqualified \"in compliance\" attestations were, in hindsight, inaccurate. They were made in good faith in reliance on Meridian's written confirmation, which makes criminal or false-statement exposure on those filings remote. We have not identified a formal way to amend them. Now that the Committee knows the facts, the Plan **must not** file another unqualified attestation on December 31 unless the contract has actually been fixed. **Even if it is fixed in December**, the 2026 attestation covers December 20, 2025 through the filing date, and the old terms were in force for nearly all of that period. We recommend filing a timely 2026 attestation that uses the \"Additional Information\" field to:\n\n- identify the provisions;\n- explain the reliance on Meridian; and\n- describe the corrective steps taken.\n\nThat one filing also serves as a corrective disclosure for 2024\u20132025. Meridian's promise that the Plan can attest \"without any additional information\" is wrong on the dates alone.\n\n**4. Realistic exposure (for Mr. Halvorsen).** The main penalty is the Internal Revenue Code \u00a7 4980D excise tax ($100 per day per affected individual), reported by the employer on Form 8928.\n\n- **Statutory maximum.** If every covered life "
+    }
+  ],
+  "mean_pass_rate": 0.9556,
+  "per_criterion_pass": {
+    "c01": 1.0,
+    "c02": 1.0,
+    "c03": 1.0,
+    "c04": 0.0,
+    "c05": 0.0,
+    "c06": 1.0,
+    "c07": 1.0,
+    "c08": 1.0,
+    "c09": 1.0,
+    "c10": 1.0,
+    "c11": 1.0,
+    "c12": 1.0,
+    "c13": 1.0,
+    "c14": 1.0,
+    "c15": 1.0,
+    "c16": 1.0,
+    "c17": 1.0,
+    "c18": 1.0,
+    "c19": 1.0,
+    "c20": 1.0,
+    "c21": 1.0,
+    "c22": 1.0,
+    "c23": 1.0,
+    "c24": 1.0,
+    "c25": 1.0,
+    "c26": 1.0,
+    "c27": 1.0,
+    "c28": 1.0,
+    "c29": 1.0,
+    "c30": 1.0,
+    "c31": 1.0,
+    "c32": 1.0,
+    "c33": 1.0,
+    "c34": 1.0,
+    "c35": 1.0,
+    "c36": 1.0,
+    "c37": 1.0,
+    "c38": 1.0,
+    "c39": 1.0,
+    "c40": 1.0,
+    "c41": 1.0,
+    "c42": 1.0,
+    "c43": 1.0,
+    "c44": 1.0,
+    "c45": 1.0
+  },
+  "qa": {
+    "qa_pass": true,
+    "realism": 5,
+    "legal_soundness": 4,
+    "criteria_quality": 4,
+    "issues": [
+      {
+        "where": "c31 grader note (ERISA \u00a7 408(b)(2)(B))",
+        "severity": "minor",
+        "issue": "The note treats Northgate as a covered service provider because it expects $1,000+ in 'compensation', but under \u00a7 408(b)(2)(B)(ii) 'direct compensation' is compensation received directly from the covered plan, and the SOW's $85,000 fixed fee is paid by the Company, not the Plan. The cleaner basis for CSP status is the Marketplace participation fees (indirect compensation from sources other than plan/sponsor/CSP/affiliate, received in connection with the market check). The criterion itself is sound, but a careful memo that flags the direct/indirect definitional question and concludes Northgate is nonetheless a CSP (or should be treated as one out of prudence) must not be marked down.",
+        "fix": "Add to the grader note: 'A memo that notes the fixed fee is paid by the Company rather than the Plan and grounds CSP status on the Marketplace indirect compensation (or recommends obtaining the disclosure regardless) passes.'"
+      },
+      {
+        "where": "c05 grader note (ASA \u00a7 9.6 audit caps)",
+        "severity": "minor",
+        "issue": "The criterion fails any memo that leaves 9.6(a)/(c) as a 'gray area', relying on a paraphrase of FAQ Part 69 as addressing sample limits, frequency limits and premises-only access. The paraphrase is consistent with my understanding of Part 69, but because the criterion is strict on this point the grader note should quote or pinpoint the FAQ question relied on so the grader is not applying a characterisation the memo (which need not cite the FAQ) may reasonably hedge on given that audits typically involve identified PHI rather than de-identified data.",
+        "fix": "Pin-cite the specific Part 69 Q&A language in the grader note (or, if it cannot be pin-cited, soften the pass line to 'likely/probably prohibited' with the de-identified-vs-PHI nuance expressly accepted)."
+      },
+      {
+        "where": "c20 / c21 grader notes (\u00a7 4980D arithmetic)",
+        "severity": "minor",
+        "issue": "Two small timing points: (i) the ASA was executed Dec 11\u201314, 2023, so the Plan arguably 'entered into' the restricted agreement in employer taxable year 2023, meaning the per-year cap could reach 2023\u20132026, not just 2024\u20132026; (ii) the (c)(2) 30-day period 'beginning on' Sept 25, 2026 ends Oct 24, not Oct 25. Neither affects the intended conclusion, but the grader should not penalise a memo that computes either differently.",
+        "fix": "Change the illustrative figure to 'e.g., $500,000 per employer taxable year implicated (2023/2024\u20132026)' and 'on or about October 24\u201325, 2026', and state that exact day-counts and year-counts are not graded."
+      },
+      {
+        "where": "Grader notes \u00a7 7 (Attestations) / c11",
+        "severity": "minor",
+        "issue": "The notes do not mention that the Meridian ASA was signed Dec 14, 2023 \u2014 inside the attestation period covered by Cordell's December 2023 submission \u2014 so the 2023 attestation (not only 2024 and 2025) may also be inaccurate. This is an unexploited planted fact, not an error, but a memo that spots it should be credited rather than treated as a deviation from the 'two attestations' framing in the instruction and c11.",
+        "fix": "Add a line to the grader notes: 'A memo that also flags the December 2023 attestation because the ASA was executed December 14, 2023 is correct and should be credited.'"
+      },
+      {
+        "where": "c32 / grader notes 'Governing law'",
+        "severity": "minor",
+        "issue": "The assertion that no implementing regulations exist under \u00a7 724 and that enforcement proceeds solely by FAQ is correct as of my knowledge, but the task is dated October 2026; the negative criterion would become a trap for a correct memo if the Departments issued rulemaking or a new FAQ Part between mid-2026 and the task date.",
+        "fix": "Have the task author confirm currency of the 'no regulations / FAQ Parts 57 and 69 only' statement as of the task date before deployment, and instruct the grader to accept citation to any genuinely issued later guidance."
+      }
+    ],
+    "summary": "Pass. A highly realistic, well-constructed benefits assignment with an internally consistent record (dates, headcounts, spend, attestation periods, amendment cross-references all reconcile). The legal premises underlying every criterion check out: ERISA \u00a7 724 (Div. BB Title II \u00a7 201, not the NSA), the (a)(2) public-disclosure limitation to (1)(A) data, HIPAA de-identification being participant-focused, \u00a7 164.504(f) sponsor firewall, limited-data-set route, \u00a7 4980D mechanics (per-day tax, (b)(3) minimum on examination, (c)(1)\u2013(4), employer liability, Form 8928), \u00a7 408(b)(2)(B), the inapplicability of \u00a7 12.4, and the correct treatment of \u00a7 410 as not squarely on point. Criteria are atomic enough, binary and verifiable from the memo, with sensible calibration criteria and negative traps. Issues found are all minor refinements to grader notes (direct/indirect compensation nuance in c31, pin-citing FAQ Part 69 for c05, small \u00a7 4980D timing arithmetic, crediting a memo that spots the 2023 attestation, and confirming currency of the 'no regulations' premise as of the October 2026 task date). No criterion rests on a legal misstatement."
+  },
+  "accepted": false,
+  "reasons": [
+    "too easy: solver mean pass rate 96% >= target max 75%"
+  ],
+  "generator_cost_usd": 5.880873750000001,
+  "solver_cost_usd": 2.4372524,
+  "judge_cost_usd": 2.2909229,
+  "qa_cost_usd": 1.9981943500000001
+}

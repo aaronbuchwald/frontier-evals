@@ -1,0 +1,94 @@
+id: caa-gag-clause-deidentified-claims-access
+title: Gag clause prohibition - TPA limits on access to de-identified claims data (Halvorsen / Meridian)
+package: harvey
+instruction: |
+  Halvorsen's General Counsel needs our advice before the Benefits Committee meets on
+  October 28. Review the Meridian administrative services agreement, Meridian's proposed
+  amendment, and the other materials in the matter folder. Prepare a memo to Dana Okafor
+  analyzing whether the Meridian arrangement contains gag clauses prohibited under the
+  Consolidated Appropriations Act, how Halvorsen should handle Northgate's data request and the
+  proposed claims audit, what to do about the gag clause attestations already filed and the one
+  due December 31, the Plan's realistic exposure, whether to sign Meridian's proposed amendment,
+  and the amendment and negotiating approach we recommend. Flag any other fiduciary issues the
+  Committee should consider. Executive summary first.
+deliverables:
+  - memo.md
+workspace:
+  - path: 01_email_okafor_to_lindqvist_2026-10-14.md
+    role: key
+    description: General Counsel's request to outside counsel with background, the corporate structure behind the Meridian Choice network, Meridian's proposed amendment, and the questions to answer
+  - path: 02_meridian_asa_excerpts.md
+    role: key
+    description: Excerpts of the Administrative Services Agreement between the Plan and Meridian (definitions, Article 9 Data, Article 12 Term)
+  - path: 03_email_chain_raman_delacroix_2026-09.md
+    role: key
+    description: Late-September correspondence between Halvorsen's benefits director and Meridian's account executive about the data request
+  - path: 04_northgate_data_request_2026-09-22.md
+    role: key
+    description: Northgate Benefits Advisory's claims data request letter of September 22, 2026 (fields, period, purposes, proposed auditor)
+  - path: 05_benefits_committee_minutes_2026-09-30.md
+    role: key
+    description: Minutes of the Plan's Benefits Committee discussing the data request, the Northgate fee arrangement, Meridian's alternative offer, non-renewal, and fiduciary monitoring
+  - path: 06_gcpca_attestation_records.md
+    role: key
+    description: Records of the 2024 and 2025 Gag Clause Prohibition Compliance Attestations, Meridian's 2024 position on attesting, and the Cordell transition
+  - path: 07_erisa_724_statutory_excerpt.md
+    role: reference
+    description: Paralegal's excerpt of ERISA section 724 (29 U.S.C. 1185m) and parallel citations
+  - path: 08_meridian_third_party_data_use_agreement_template.md
+    role: key
+    description: Meridian's standard form agreement for third-party recipients of plan data (Form TPDUA-2023.2)
+  - path: 09_hipaa_baa_excerpt.md
+    role: peripheral
+    description: Excerpt of the HIPAA business associate agreement between the Plan and Meridian
+  - path: 10_plan_document_excerpt.md
+    role: key
+    description: Excerpt of the Halvorsen Industrial Group Employee Health Plan document (fiduciaries, plan year, enrollment, PHI disclosure to the plan sponsor)
+  - path: 11_continental_meridian_network_access_agreement_excerpt.md
+    role: key
+    description: Redacted excerpt of the intercompany network access agreement between Continental Mutual Health and Meridian, obtained during the 2023 RFP
+  - path: 12_northgate_statement_of_work_2026-08-20.md
+    role: key
+    description: Excerpt of Northgate's statement of work with the Benefits Committee (scope, fees, Marketplace program, compensation disclosure)
+  - path: 13_meridian_proposed_caa_amendment_2026-10-09.md
+    role: key
+    description: Meridian's cover email and its proposed "standard CAA Data Access Amendment" (Form ASA-AM-CAA-2025.1) with Schedules A-1 and A-2, offered with a fee waiver if signed by October 30
+metadata:
+  practice_area: ERISA / employee benefits (health & welfare); CAA 2021 transparency; HIPAA privacy
+  task_type: advisory
+  difficulty: expert
+  edge_case: >
+    ERISA § 724 / CAA 2021 Div. BB § 201 prohibits a plan from agreeing to terms that "directly or
+    indirectly restrict" electronic access to de-identified claims data on a per-claim basis, but
+    prescribes no format, delivery mechanism, timing or price. The TPA argues that portal access
+    plus paid, delayed custom extracts and a consent right over third-party sharing are
+    commercial terms, not restrictions, and that a savings clause cures everything; it then
+    offers a "standard CAA amendment" that fixes the obvious problems (consent, 180 days,
+    per-line pricing) while re-creating the restrictions in subtler forms (provider-key masking
+    labelled as de-identification, a notice-and-objection right that withholds delivery, a
+    two-per-year frequency cap and 24-month lookback, a partial fix to the data use agreement,
+    a § 724 "acknowledgment", a release of Plan claims, and effectiveness conditioned on the
+    carrier affiliate's consent). The associate must separate the clear violations from the
+    genuinely unsettled terms (fees, lags, standard formats), credit the amendment's acceptable
+    commercial elements rather than rejecting it wholesale, trace the restriction upstream to
+    the carrier affiliate's network-license agreement, get the attestation (including
+    attestation-period) and IRC § 4980D mechanics right, structure the data flow so it is lawful
+    under both § 724 and HIPAA (the request as drafted is not safe-harbor de-identified; the
+    plan document limits PHI to the sponsor; the audit needs full-date data that § 724 does not
+    itself guarantee), and avoid the de-identification, change-in-law and "Meridian is the
+    violator" traps - while also catching the consultant's own conflict and ERISA
+    § 408(b)(2)(B) disclosure issue and the Cordell-era data gap.
+  author: envlab (seed task; revised iter2)
+  source_idea: ideas/nsa-gag-clause.md
+  target_max_pass_rate: 0.75
+  min_criteria: 10
+  notes: >
+    Dates assume the matter is live in mid-October 2026 (memo date on or about October 17,
+    2026). Parties are fictional. The statutory excerpt is provided; the Departments' FAQ
+    guidance (Parts 57 and 69), the IRC § 4980D mechanics, ERISA § 408(b)(2)(B) and the HIPAA
+    de-identification / plan-sponsor rules are deliberately not provided and must come from the
+    associate's own knowledge. Iteration 2 changes - re-sequenced the September correspondence
+    so it post-dates the Northgate letter; added document 13 (Meridian's proposed amendment)
+    and thirteen criteria that turn on it; split the former format/calibration criterion;
+    merged the overlapping 9.3 / "proprietary" criteria; added attestation-period and
+    § 4980D(b)(3) criteria; tightened grader notes per QA review.
