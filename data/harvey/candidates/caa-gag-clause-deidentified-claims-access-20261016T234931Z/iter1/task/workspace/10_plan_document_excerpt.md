@@ -29,3 +29,29 @@ deciding claims and appeals under Section 9.
 sufficient to determine the benefits due to Participants and to demonstrate the Plan's
 compliance with applicable law, and may require the Claims Administrator to furnish such
 records.
+
+**8.7 Use and Disclosure of Protected Health Information by the Plan Sponsor.**
+
+(a) The Plan (and any business associate acting on its behalf) may disclose to the Plan Sponsor
+(i) summary health information, as defined in 45 C.F.R. § 164.504(a), for the purpose of
+obtaining premium bids or stop-loss quotations or for modifying, amending or terminating the
+Plan, and (ii) information on whether an individual is participating in the Plan or is enrolled
+in or has disenrolled from the Plan.
+
+(b) The Plan may disclose Protected Health Information to the Plan Sponsor for plan
+administration functions performed by the Plan Sponsor on behalf of the Plan only after the
+Plan Sponsor has certified to the Plan that the Plan document has been amended to incorporate
+the provisions required by 45 C.F.R. § 164.504(f)(2), and only to the employees or classes of
+employees identified in Appendix B. The Plan Sponsor certified to the Plan on December 18,
+2023 that this Plan document incorporates those provisions.
+
+(c) Protected Health Information disclosed under paragraph (b) shall be used only for plan
+administration functions and shall not be used for employment-related actions or in
+connection with any other benefit or employee benefit plan of the Plan Sponsor. Any employee
+not identified in Appendix B, including any member of the Benefits Committee not so
+identified, shall receive only summary health information or information that has been
+de-identified in accordance with 45 C.F.R. § 164.514.
+
+**Appendix B - Employees with access to Protected Health Information for plan administration
+functions:** Director, Benefits; Benefits Analyst; Payroll Benefits Specialist; General
+Counsel (for legal compliance and claims appeals only).

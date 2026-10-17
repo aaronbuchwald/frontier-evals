@@ -69,3 +69,10 @@ on the Plan's behalf by our prior TPA, Cordell Benefit Services, under the Corde
 ended December 31, 2023. I have the Cordell confirmation on file. I submitted the 2024 and
 2025 attestations myself in reliance on the Meridian email in Section A. I did not review
 Article 9 of the ASA against the statute before submitting.
+
+For completeness on the Cordell transition: Cordell continued to process run-out claims
+(dates of service through December 31, 2023) until March 31, 2024. In April 2024 Cordell
+delivered its final claims file to us in the Cordell standard layout, which includes claim-level
+allowed amounts and rendering provider NPIs; it is on the Benefits shared drive
+(Benefits/Cordell/Final_Claims_2024-04). Meridian did not receive or load the Cordell claims
+history; its records start with claims it adjudicated from January 1, 2024.

@@ -3,18 +3,20 @@ title: Gag clause prohibition - TPA limits on access to de-identified claims dat
 package: harvey
 instruction: |
   Halvorsen's General Counsel needs our advice before the Benefits Committee meets on
-  October 28. Review the Meridian administrative services agreement and the correspondence in
-  the matter folder. Prepare a memo to Dana Okafor analyzing whether Article 9 contains gag
-  clauses prohibited under the Consolidated Appropriations Act, how Halvorsen should handle
-  Northgate's data request and the proposed claims audit, what to do about the gag clause
-  attestations (the ones already filed and the one due December 31), and a recommended
-  amendment and negotiating approach with Meridian. Executive summary first.
+  October 28. Review the Meridian administrative services agreement and the other materials in
+  the matter folder. Prepare a memo to Dana Okafor analyzing whether Article 9 (or anything else
+  in the Meridian arrangement) contains gag clauses prohibited under the Consolidated
+  Appropriations Act, how Halvorsen should handle Northgate's data request and the proposed
+  claims audit, what to do about the gag clause attestations (the ones already filed and the one
+  due December 31), the Plan's realistic exposure, and a recommended amendment and negotiating
+  approach with Meridian. Flag any other fiduciary issues the Committee should consider.
+  Executive summary first.
 deliverables:
   - memo.md
 workspace:
   - path: 01_email_okafor_to_lindqvist_2026-10-14.md
     role: key
-    description: General Counsel's request to outside counsel with background and the questions to answer
+    description: General Counsel's request to outside counsel with background, the corporate structure behind the Meridian Choice network, and the questions to answer
   - path: 02_meridian_asa_excerpts.md
     role: key
     description: Excerpts of the Administrative Services Agreement between the Plan and Meridian (definitions, Article 9 Data, Article 12 Term)
@@ -23,43 +25,56 @@ workspace:
     description: Correspondence between Halvorsen's benefits director and Meridian's account executive about the data request
   - path: 04_northgate_data_request_2026-09-22.md
     role: key
-    description: Northgate Benefits Advisory's claims data request letter (fields, purpose, proposed auditor)
+    description: Northgate Benefits Advisory's claims data request letter (fields, period, purposes, proposed auditor)
   - path: 05_benefits_committee_minutes_2026-09-30.md
     role: key
-    description: Minutes of the Plan's Benefits Committee discussing the data request and fiduciary monitoring
+    description: Minutes of the Plan's Benefits Committee discussing the data request, the Northgate fee arrangement, Meridian's alternative offer, and fiduciary monitoring
   - path: 06_gcpca_attestation_records.md
     role: key
-    description: Records of the 2024 and 2025 Gag Clause Prohibition Compliance Attestations and Meridian's 2024 position on attesting
+    description: Records of the 2024 and 2025 Gag Clause Prohibition Compliance Attestations, Meridian's 2024 position on attesting, and the Cordell transition
   - path: 07_erisa_724_statutory_excerpt.md
     role: reference
     description: Paralegal's excerpt of ERISA section 724 (29 U.S.C. 1185m) and parallel citations
   - path: 08_meridian_third_party_data_use_agreement_template.md
-    role: peripheral
+    role: key
     description: Meridian's standard form agreement for third-party recipients of plan data
   - path: 09_hipaa_baa_excerpt.md
     role: peripheral
     description: Excerpt of the HIPAA business associate agreement between the Plan and Meridian
   - path: 10_plan_document_excerpt.md
-    role: peripheral
-    description: Excerpt of the Halvorsen Industrial Group Employee Health Plan document (fiduciaries, plan year, enrollment)
+    role: key
+    description: Excerpt of the Halvorsen Industrial Group Employee Health Plan document (fiduciaries, plan year, enrollment, PHI disclosure to the plan sponsor)
+  - path: 11_continental_meridian_network_access_agreement_excerpt.md
+    role: key
+    description: Redacted excerpt of the intercompany network access agreement between Continental Mutual Health and Meridian, obtained during the 2023 RFP
+  - path: 12_northgate_statement_of_work_2026-08-20.md
+    role: key
+    description: Excerpt of Northgate's statement of work with the Benefits Committee (scope, fees, Marketplace program, compensation disclosure)
 metadata:
-  practice_area: ERISA / employee benefits (health & welfare); CAA 2021 transparency
+  practice_area: ERISA / employee benefits (health & welfare); CAA 2021 transparency; HIPAA privacy
   task_type: advisory
   difficulty: expert
   edge_case: >
-    ERISA § 724 / CAA 2021 § 201 prohibits a plan from agreeing to terms that "directly or
+    ERISA § 724 / CAA 2021 Div. BB § 201 prohibits a plan from agreeing to terms that "directly or
     indirectly restrict" electronic access to de-identified claims data on a per-claim basis, but
     prescribes no format, delivery mechanism, timing or price. The TPA argues that portal access
     plus paid, delayed custom extracts and a consent right over third-party sharing are
     commercial terms, not restrictions, and that a savings clause cures everything. The associate
     must separate the clear violations (consent at TPA discretion, participant-disclosure bar,
     audit-sample caps) from the genuinely unsettled ones (fees, 180-day lag, standard formats),
-    get the attestation mechanics right, and avoid the de-identification and change-in-law traps.
-  author: envlab (seed task)
+    trace the restriction upstream to the carrier affiliate's network-license agreement, get the
+    attestation and IRC § 4980D mechanics right (including the reasonable-cause cap and the
+    30-day correction window), structure the data flow so that it is both lawful under § 724 and
+    compliant with HIPAA (the request as drafted is not safe-harbor de-identified; the plan
+    document limits PHI to the sponsor), and avoid the de-identification, change-in-law and
+    "Meridian is the violator" traps - while also catching the consultant's own conflict and
+    ERISA § 408(b)(2)(B) disclosure issue and the Cordell-era data gap.
+  author: envlab (seed task; revised iter1)
   source_idea: ideas/nsa-gag-clause.md
   target_max_pass_rate: 0.75
   min_criteria: 10
   notes: >
     Dates assume the matter is live in mid-October 2026. Parties are fictional. The statutory
-    excerpt is provided; the Departments' FAQ guidance (Parts 57 and 69) is deliberately not
-    provided and must come from the associate's own knowledge.
+    excerpt is provided; the Departments' FAQ guidance (Parts 57 and 69), the IRC § 4980D
+    mechanics, ERISA § 408(b)(2)(B) and the HIPAA de-identification / plan-sponsor rules are
+    deliberately not provided and must come from the associate's own knowledge.

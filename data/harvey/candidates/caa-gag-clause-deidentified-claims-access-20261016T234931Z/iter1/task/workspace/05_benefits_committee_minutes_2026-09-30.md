@@ -21,12 +21,28 @@ them. Ms. Raman summarized Meridian's September 18 response (custom extract fee 
 $140,000-$160,000, 180-day delivery, refusal of consent for Northgate as a "Competitor",
 250-claim audit cap). Mr. Park observed that the Plan paid Meridian approximately $2.1 million
 in administrative fees in 2025 and approximately $71 million in medical claims, and that the
-Committee has never independently verified Meridian's network pricing. Mr. Halvorsen noted the
-Committee's discussion at the June meeting of recent fiduciary litigation concerning employers'
-access to claims data and the Committee's duty to monitor service providers, and said he was
-"not comfortable signing another attestation we can't stand behind." Ms. Okafor advised that
-she would engage outside counsel to review the ASA and the attestation question and report at
-the October 28 meeting. Ms. Brandt left the meeting at 10:48 a.m.
+Committee has never independently verified Meridian's network pricing. Ms. Raman noted that
+Meridian had offered, at no charge, a "network performance report" prepared by Meridian
+Advisory Services (a Meridian affiliate) as an alternative to the Northgate benchmarking.
+Mr. Halvorsen said he was skeptical of "Meridian grading its own homework" but asked that
+counsel advise whether the Committee could rely on it in whole or in part.
+
+Mr. Park asked whether Northgate's fee arrangement raised any issue the Committee should
+consider, noting that the Statement of Work provides for a transition fee if the Plan changes
+vendors after the market check. Ms. Brandt said the arrangement is standard in the market and
+is described in the Statement of Work. Mr. Park asked whether Northgate had provided any
+written compensation disclosure beyond the Statement of Work; Ms. Raman said she would check
+the file. Mr. Halvorsen noted the Committee's discussion at the June meeting of recent
+fiduciary litigation concerning employers' access to claims data and the Committee's duty to
+monitor service providers, and said he was "not comfortable signing another attestation we
+can't stand behind." Ms. Okafor advised that she would engage outside counsel to review the
+ASA, the attestation question and the Northgate engagement and report at the October 28
+meeting. Ms. Brandt left the meeting at 10:48 a.m.
+
+Following Ms. Brandt's departure, Mr. Halvorsen asked that, once the data is obtained, the
+full claim-level file be circulated to Committee members ahead of the January meeting so that
+the Committee can "see the actual numbers rather than a consultant's summary." Ms. Okafor said
+she would take that request to outside counsel as well.
 
 **4. Gag clause attestation.** Ms. Raman reported that the 2026 attestation is due
 December 31, 2026 and that she had submitted the 2024 and 2025 attestations herself through

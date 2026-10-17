@@ -178,6 +178,51 @@ def research(idea_file, package_dir, generator_path, solver_path, verifier_path,
 
 
 @main.command()
+@click.option("--ideas", "idea_files", required=True, multiple=True, type=click.Path(exists=True, dir_okay=False), help="Idea files (repeatable / glob).")
+@click.option("--package", "package_dir", default="data/harvey", type=click.Path(exists=True, file_okay=False))
+@click.option("--generator", "generator_path", required=True, type=click.Path(exists=True))
+@click.option("--solver", "solver_path", required=True, type=click.Path(exists=True))
+@click.option("--verifier", "verifier_path", type=click.Path(exists=True))
+@click.option("--qa", "qa_path", type=click.Path(exists=True))
+@click.option("--env", "env_path", type=click.Path(exists=True))
+@click.option("--iterations", default=3, show_default=True)
+@click.option("--solver-runs", default=1, show_default=True)
+@click.option("--skip-qa", is_flag=True)
+@click.option("--runs-root", type=click.Path(file_okay=False), default="runs/research")
+@click.option("--promote", "do_promote", is_flag=True, help="Copy accepted tasks into <package>/tasks/.")
+def batch(idea_files, package_dir, generator_path, solver_path, verifier_path, qa_path, env_path, iterations,
+          solver_runs, skip_qa, runs_root, do_promote):
+    """Run the research loop over a queue of ideas and print a summary table."""
+    from .research import run_research
+    rows = []
+    for idea in idea_files:
+        console.rule(f"[bold]{idea}[/]")
+        try:
+            rlog = run_research(
+                idea_file=Path(idea), package_dir=Path(package_dir), generator=AgentConfig.load(generator_path),
+                solver=AgentConfig.load(solver_path), verifier=_verifier(verifier_path), env=_env(env_path),
+                qa_agent=AgentConfig.load(qa_path) if qa_path else None, iterations=iterations,
+                solver_runs=solver_runs, skip_qa=skip_qa, runs_root=Path(runs_root),
+                log=lambda m: console.print(f"[dim]{m}[/]"),
+            )
+        except Exception as e:  # noqa: BLE001
+            rows.append((idea, "ERROR", None, str(e)[:120]))
+            continue
+        last = rlog.iterations[-1] if rlog.iterations else None
+        rows.append((idea, "accepted" if rlog.accepted else "not accepted",
+                     None if last is None else last.mean_pass_rate, rlog.best_task_dir or ""))
+        if do_promote and rlog.accepted and rlog.best_task_dir:
+            t = TaskSpec.load(rlog.best_task_dir)
+            dest = Path(package_dir) / "tasks" / t.id
+            if not dest.exists():
+                shutil.copytree(rlog.best_task_dir, dest)
+                console.print(f"promoted {t.id} -> {dest}")
+    console.rule("[bold]batch summary[/]")
+    for idea, status, pr, where in rows:
+        console.print(f"{Path(idea).stem:45s} {status:14s} pass_rate={'-' if pr is None else f'{pr:.0%}':6s} {where}")
+
+
+@main.command()
 @click.option("--from", "src", required=True, type=click.Path(exists=True, file_okay=False), help="Candidate task dir (e.g. .../best).")
 @click.option("--package", "package_dir", default="data/harvey", type=click.Path(exists=True, file_okay=False))
 @click.option("--id", "task_id", default=None)

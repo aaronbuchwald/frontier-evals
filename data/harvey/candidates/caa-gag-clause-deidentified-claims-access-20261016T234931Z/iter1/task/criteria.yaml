@@ -2,110 +2,192 @@ criteria:
 - id: c01
   category: citation
   deliverable: memo.md
-  text: Identifies ERISA section 724 (29 U.S.C. 1185m), enacted by section 201 of Division BB of the Consolidated Appropriations Act, 2021, as the provision that governs Halvorsen's self-funded ERISA plan (references to the parallel PHSA 2799A-9 / IRC 9824 provisions are acceptable in addition, but a memo that relies only on the PHSA or on "the No Surprises Act" without identifying the ERISA provision fails).
-  grader_notes: The citation must be to ERISA 724 / 29 USC 1185m or CAA Division BB section 201. Describing it only as "the No Surprises Act" or only citing the PHSA provision does not pass.
+  polarity: positive
+  text: Identifies ERISA section 724 (29 U.S.C. 1185m), added by section 201 of Title II of Division BB of the Consolidated Appropriations Act, 2021, as the provision governing Halvorsen's self-funded ERISA plan, and does not describe the gag clause prohibition as a provision of the No Surprises Act.
+  grader_notes: The citation must be to ERISA 724 / 29 USC 1185m (or CAA Div. BB sec. 201); references to the parallel PHSA 2799A-9 / IRC 9824 provisions in addition are fine. FAIL if the memo relies only on the PHSA provision, or if it attributes the gag clause prohibition to the No Surprises Act (which is Title I of Division BB; the gag clause prohibition is in Title II, the transparency title). Saying the CAA "includes" the No Surprises Act is not a failure; saying "the No Surprises Act's gag clause prohibition" is.
 - id: c02
   category: issue_spotting
   deliverable: memo.md
+  polarity: positive
   text: Concludes that Section 9.4's requirement of Meridian's prior written consent before the Plan shares claims data with consultants or auditors is a prohibited restriction under section 724(a)(1)(C) on sharing data with, or directing that data be shared with, a business associate.
-  grader_notes: The Departments' FAQs (Part 57 Q2; Part 69 Q7) treat access or sharing that is subject to the TPA's discretion or consent as the paradigm gag clause. A memo that calls 9.4 merely "problematic" or "aggressive" without concluding it is prohibited fails.
+  grader_notes: The Departments' FAQs (Part 57 Q2; Part 69) treat access or sharing that is subject to the TPA's discretion or consent as the paradigm gag clause. A memo that calls 9.4 merely "problematic" or "aggressive" without concluding it is prohibited fails.
 - id: c03
   category: issue_spotting
   deliverable: memo.md
+  polarity: positive
   text: Concludes that Section 9.5's bar on the Plan Sponsor disclosing provider-specific reimbursement rates, allowed amounts, or provider quality ratings to participants, network providers, or referring providers is prohibited by section 724(a)(1)(A).
   grader_notes: Section 724(a)(1)(A) protects providing provider-specific cost or quality information to referring providers, the plan sponsor, participants, beneficiaries and eligible individuals. Meridian's member-portal cost estimates do not cure a restriction on the Plan itself.
 - id: c04
   category: legal_analysis
   deliverable: memo.md
+  polarity: positive
   text: Explains that the section 724(a)(2) exception for "reasonable restrictions on the public disclosure" applies only to the provider-specific cost and quality information described in paragraph (1)(A) and therefore cannot be used to justify restrictions on access to or sharing of de-identified claims data under (1)(B) or (1)(C).
-  grader_notes: Many answers either ignore (a)(2) or treat it as a general reasonableness exception. Pass only if the memo both notes the exception is limited to (1)(A) information and draws the consequence that it does not reach (B)/(C) data access or sharing. Noting that the "or the public" portion of 9.5 may be preserved is good but not required.
+  grader_notes: Pass only if the memo both notes the exception is limited to (1)(A) information and draws the consequence that it does not reach (B)/(C) data access or sharing. Noting that the "or the public" portion of 9.5 may be preserved is good but not required.
 - id: c05
   category: issue_spotting
   deliverable: memo.md
-  text: Concludes that Section 9.6's audit limits (once per plan year, a sample capped at 250 claims selected by Meridian's methodology, on Meridian's premises or a view-only portal) are impermissible restrictions on electronic access to de-identified claims data, not merely commercially unfavorable terms.
-  grader_notes: FAQs Part 69 Q8 lists limiting access to a "statistically significant" sample, limiting frequency of claims reviews, limiting scope to a specific audit, and on-premises-only access as prohibited. The memo need not cite the FAQ by number but must reach the conclusion that these limits are prohibited restrictions.
+  polarity: positive
+  text: Concludes that Section 9.6's audit limits (once per plan year, a sample capped at 250 claims selected by Meridian's methodology, on Meridian's premises or a view-only portal) are prohibited restrictions on the Plan's and its auditor's electronic access to de-identified claims data, not merely commercially unfavorable terms or a "gray area."
+  grader_notes: The Departments have identified limits on the number or sample of claims a plan may access, limits on the frequency of claims reviews, and premises-only or view-only access as restrictions on electronic access that violate the prohibition. The memo need not cite the FAQ by number. A memo may note, correctly, that section 724 does not itself create an audit right; but it must still conclude that, as applied to limit what claims data the Plan's auditor (a business associate) may access, 9.6(a) and (c) are prohibited. A memo that leaves 9.6(a)/(c) as merely "unfavorable", "a gray area" or "low-moderate risk" fails.
 - id: c06
   category: legal_analysis
   deliverable: memo.md
+  polarity: positive
   text: Acknowledges that section 724 and the Departments' guidance do not prescribe a required format, delivery mechanism, turnaround time, or price for electronic access, and accordingly frames the fee, 180-day lag, and standard-format terms of Section 9.3 as a question of whether they "directly or indirectly restrict" access rather than asserting that any fee or delay is a per se violation.
-  grader_notes: This is the calibration criterion. FAIL if the memo asserts flatly that charging any fee, or any delay, or any format limitation is automatically unlawful, or if it asserts that the statute requires raw per-claim extracts in a particular format or at no charge. PASS requires the memo to say explicitly that the statute/guidance are silent on format, mechanism, timing and price (or words to that effect) and then analyze the terms under the "directly or indirectly restrict" standard.
+  grader_notes: Calibration criterion. FAIL if the memo asserts flatly that charging any fee, or any delay, or any format limitation is automatically unlawful, or that the statute requires raw per-claim extracts in a particular format or at no charge. PASS requires the memo to say that the statute/guidance are silent on format, mechanism, timing and price (or words to that effect) and then analyze under the "directly or indirectly restrict" standard.
 - id: c07
   category: legal_analysis
   deliverable: memo.md
+  polarity: positive
   text: Concludes that the Section 9.3 terms, taken together (claim-level allowed amounts and provider identifiers available only as a paid "custom extract" at $18,500 plus $0.11 per line, a 180-day delivery window running from an acceptance for which there is no deadline, and Meridian's right to decline extracts that would reveal "Proprietary Information"), operate as an indirect restriction on per-claim access to the data elements section 724(a)(1)(B) expressly lists, and are therefore likely prohibited.
-  grader_notes: The point is that the enumerated per-claim elements (allowed amount, provider name/clinical designation, service codes) are precisely the ones Meridian excludes from standard access and reserves the right to decline. A memo that treats portal access to aggregated data as satisfying (B), or that leaves 9.3 as "probably fine" because the statute is silent on price, fails. A memo that flags the open-ended acceptance period as compounding the lag is a strong signal but not required.
+  grader_notes: The enumerated per-claim elements (allowed amount, provider name/clinical designation, service codes) are precisely the ones Meridian excludes from standard access and reserves the right to decline. A memo that treats portal access to aggregated data as satisfying (B), or that leaves 9.3 as "probably fine" because the statute is silent on price, fails. Flagging the open-ended acceptance period is a strong signal but not required.
 - id: c08
   category: legal_analysis
   deliverable: memo.md
+  polarity: positive
   text: States that Meridian's classification of allowed amounts and provider-specific rates as "Meridian Proprietary Information" cannot override section 724, because the statute expressly lists allowed amounts and provider name and clinical designation among the per-claim elements the Plan must be able to access.
-  grader_notes: FAQs Part 57 Q2 rejects a TPA's "proprietary" label as a basis for restricting disclosure. The memo must connect the proprietary-information argument to the statutory enumeration (or the Departments' rejection of the proprietary argument) and reject it.
+  grader_notes: The Departments have rejected a TPA's "proprietary" label as a basis for restricting access. The memo must connect the proprietary-information argument to the statutory enumeration (or the Departments' rejection of the argument) and reject it.
 - id: c09
   category: legal_analysis
   deliverable: memo.md
+  polarity: positive
   text: Correctly explains that "de-identified" in section 724(a)(1)(B) refers to removal of participant and beneficiary identifiers under the HIPAA de-identification standard (45 C.F.R. 164.514), and does not suggest that provider identities, provider NPIs, or provider-level pricing must or may be removed to make the data "de-identified."
-  grader_notes: Trap. Some answers suggest Meridian may strip provider identifiers or allowed amounts as part of de-identification. That fails. A memo that says de-identification concerns members/participants (HIPAA safe harbor or expert determination) and that provider-level fields remain in scope passes. A citation to 164.514 is not strictly required if the HIPAA standard is clearly described.
+  grader_notes: Trap. Some answers suggest Meridian may strip provider identifiers or allowed amounts as part of de-identification. That fails. A memo that says de-identification concerns members/participants (HIPAA safe harbor or expert determination) and that provider-level fields remain in scope passes.
 - id: c10
   category: legal_analysis
   deliverable: memo.md
+  polarity: positive
   text: Explains that section 724 is directed at the Plan (the Plan "may not enter into" an agreement containing such restrictions) so that compliance and attestation exposure rests with the Plan and its fiduciaries regardless of who drafted the ASA or what Meridian's compliance team has represented, and does not describe Meridian as the party that is itself in violation of section 724.
-  grader_notes: Meridian is the counterparty, not a regulated plan or issuer here (a TPA for a self-funded plan). Pass if the memo places the obligation on the Plan/Halvorsen and does not state that Meridian is violating 724. A memo may note Meridian has contractual or reputational exposure; that is fine.
+  grader_notes: Meridian is the counterparty, not a regulated plan or issuer here (a TPA for a self-funded plan). Pass if the memo places the obligation on the Plan/Halvorsen and does not state that Meridian is violating 724. Noting Meridian's contractual or reputational exposure is fine.
 - id: c11
   category: legal_analysis
   deliverable: memo.md
+  polarity: positive
   text: Advises that the Section 9.7 compliance-with-law savings clause does not cure the prohibited provisions for attestation purposes, and recommends that the offending language be amended or deleted rather than relying on Section 9.7.
-  grader_notes: Reasons that pass include - the savings clause is triggered only on a determination by a court or governmental authority; the provisions remain operative and Meridian is in fact applying them; the Departments expect plans to remove or report prohibited provisions, not neutralize them with boilerplate. A memo that accepts Meridian's "no gag clause by definition" argument fails.
+  grader_notes: Reasons that pass include - the second sentence is triggered only on a determination by a court or governmental authority; the provisions remain operative and Meridian is in fact applying them; the Departments expect plans to remove or report prohibited provisions. A memo that accepts Meridian's "no gag clause by definition" argument fails.
 - id: c12
   category: recommendation
   deliverable: memo.md
+  polarity: positive
   text: Flags that the December 2024 and December 2025 attestations were submitted as unqualified "in compliance" attestations while Article 9 was in force, identifies this as a compliance exposure for the Plan, and recommends a documented remediation approach for the prior attestations (for example documenting the reliance on Meridian's confirmation, correcting the record with the Departments or in the next attestation's Additional Information field, and preserving a remediation file).
-  grader_notes: The memo must do all three - flag the prior attestations as inaccurate/at risk, call it an exposure, and recommend a concrete course of action. It should NOT assert that a formal "amended attestation" mechanism definitely exists, nor that prior attestations are simply irrelevant. Recommending consideration of voluntary disclosure or supplementing in the next attestation is sufficient.
+  grader_notes: Must do all three - flag the prior attestations as inaccurate/at risk, call it an exposure, and recommend a concrete course of action. It should NOT assert that a formal "amended attestation" mechanism definitely exists, nor that prior attestations are simply irrelevant.
 - id: c13
   category: recommendation
   deliverable: memo.md
-  text: Advises that Halvorsen must still submit the attestation due December 31, 2026 and, if Meridian has not amended Article 9 by then, must disclose the non-compliant provisions and the steps taken to remove them in the attestation's "Additional Information" field, consistent with the Departments' FAQ guidance, rather than skipping the attestation or attesting unqualified compliance.
-  grader_notes: FAQs Part 69 Q9. Pass requires - submit anyway; use the Additional Information disclosure if unremediated; do not attest unqualified compliance. A memo recommending that Halvorsen not file until the contract is fixed fails.
+  polarity: positive
+  text: Advises that Halvorsen must still submit the attestation due December 31, 2026 and, if Meridian has not amended Article 9 by then, must disclose the non-compliant provisions and the steps taken to remove them in the attestation's "Additional Information" field, rather than skipping the attestation or attesting unqualified compliance.
+  grader_notes: Pass requires - submit anyway; use the Additional Information disclosure if unremediated; do not attest unqualified compliance. A memo recommending that Halvorsen not file until the contract is fixed fails.
 - id: c14
   category: recommendation
   deliverable: memo.md
-  text: Recommends that the Plan put HIPAA business associate agreements in place with Northgate and Claimsight (or confirm their business associate status) and direct Meridian to furnish the de-identified data to them, and concludes that Meridian cannot rely on the "Competitor" definition or its consent right in Section 9.4 to block sharing with a business associate.
+  polarity: positive
+  text: Recommends that the Plan put HIPAA business associate agreements in place with Northgate and Claimsight (or confirm their business associate status) and direct Meridian to furnish the data to them, and concludes that Meridian cannot rely on the "Competitor" definition or its consent right in Section 9.4 to block sharing with a business associate.
   grader_notes: Section 724(a)(1)(C) protects sharing with, or directing that data be shared with, a business associate. The memo may acknowledge Meridian could seek reasonable confidentiality protections for its rates from the recipients; it must still conclude the Competitor carve-out cannot be used to refuse sharing.
 - id: c15
   category: recommendation
   deliverable: memo.md
+  polarity: positive
   text: Proposes amendment terms for Article 9 that (a) delete the consent requirement for sharing with the Plan's business associates and (b) specify the per-claim data elements to be furnished, expressly including allowed amounts and provider names or identifiers.
-  grader_notes: Both (a) and (b) must appear in the proposed amendment. Replacing consent with a requirement that recipients execute a BAA / reasonable confidentiality undertaking is acceptable for (a).
+  grader_notes: Both (a) and (b) must appear. Replacing consent with a requirement that recipients execute a BAA / reasonable confidentiality undertaking is acceptable for (a).
 - id: c16
   category: recommendation
   deliverable: memo.md
+  polarity: positive
   text: Proposes amendment terms that address timing and cost of data access, by specifying a defined reasonable delivery timeframe for claim-level extracts and limiting any charge to a reasonable cost-based fee (or no fee for standard electronic access).
-  grader_notes: Pass if the memo proposes both a timeframe (a specific number of days or "promptly / within a defined period") and a fee limitation. A memo that proposes only "reasonable terms" with no specifics fails.
+  grader_notes: Pass if the memo proposes both a timeframe (a specific number of days or "within a defined period") and a fee limitation. A memo that proposes only "reasonable terms" with no specifics fails.
 - id: c17
-  category: recommendation
+  category: issue_spotting
   deliverable: memo.md
-  text: Recommends that the amendment require Meridian to represent that none of its downstream agreements (including Meridian Choice network provider contracts) restricts the Plan's rights under section 724, or otherwise addresses the risk that a downstream Meridian agreement could indirectly restrict the Plan.
-  grader_notes: FAQs Part 69 Q6 - a TPA's downstream agreement can put the plan in violation, and the Departments expect plans to include provisions addressing it. A memo that mentions the downstream-agreement risk and recommends a representation, covenant, or diligence step passes.
+  polarity: positive
+  text: Identifies Section 4.3 of the Continental-Meridian Network Access Agreement (which bars Meridian from disclosing, or permitting a client plan to disclose, Continental Rates or claim-level allowed amounts to the plan's consultants, auditors or competing administrators without Continental's sole-discretion consent, and obliges Meridian to impose equivalent terms in each ASA) as a restriction in a Meridian agreement that can place the Plan out of compliance with section 724 and explains why Meridian cannot fix Article 9 unilaterally.
+  grader_notes: Requires synthesis of docs 01, 02 and 11. The Departments have indicated that restrictions in a TPA's agreements with other parties can put the plan in violation and expect plans to address this in their TPA contracts. Pass requires (i) identifying the Continental 4.3 clause specifically (not merely "downstream provider contracts" generically) and (ii) recognizing that it is the source of 9.4/9.5 and that an amendment therefore needs Continental's consent or waiver (or a Meridian representation and covenant backed by Continental). A memo that only recommends a generic downstream-agreement representation without engaging with the Continental excerpt fails.
 - id: c18
   category: legal_analysis
   deliverable: memo.md
+  polarity: positive
   text: Connects the data request to the Committee's ERISA fiduciary duties, explaining that the duty to prudently select and monitor service providers and to ensure plan expenses are reasonable supports obtaining the claims data, and recommends that the Committee document its efforts.
-  grader_notes: Must mention the monitoring duty (or prudence duty regarding service providers and plan expenses) and recommend documenting. A memo that merely says "the Committee should get the data" without the fiduciary framing fails.
+  grader_notes: Must mention the monitoring duty (or prudence duty regarding service providers and plan expenses) and recommend documenting.
 - id: c19
   category: legal_analysis
   deliverable: memo.md
-  text: Identifies potential excise tax exposure under Internal Revenue Code section 4980D ($100 per day per affected individual) for a group health plan's failure to satisfy the Code's parallel gag clause provision (IRC 9824), as part of the Plan Sponsor's exposure analysis.
-  grader_notes: IRC 9824 sits in Chapter 100 and 4980D applies to Chapter 100 failures; self-reporting is on Form 8928. The memo must name 4980D or describe the $100/day/individual excise tax. Describing the exposure as theoretical or noting the absence of reported enforcement is fine.
+  polarity: positive
+  text: Identifies the excise tax under Internal Revenue Code section 4980D ($100 per day per affected individual) as potential exposure for the group health plan's failure to satisfy the Code's parallel gag clause provision (IRC 9824), and notes that the tax is self-reported by the employer on Form 8928.
+  grader_notes: IRC 9824 sits in Chapter 100 and 4980D applies to Chapter 100 failures; the employer self-reports on Form 8928. Both elements (4980D and Form 8928 self-reporting) are required. Describing the exposure as theoretical or noting the absence of reported enforcement is fine.
 - id: c20
   category: fact_use
   deliverable: memo.md
+  polarity: positive
   text: Notes that the 90-day non-renewal notice deadline under Section 12.1 (October 2, 2026) has passed, so the ASA will renew for calendar 2027, and factors this into the recommended negotiating approach (for example relying on Meridian's exposure to a reported gag clause and the Plan's fiduciary posture rather than on a non-renewal threat, or considering Section 12.2 breach-based termination).
   grader_notes: Must both identify that the notice window has passed / the agreement renews for 2027, and adjust the negotiating approach accordingly.
 - id: c21
   category: negative
-  polarity: negative
   deliverable: memo.md
+  polarity: negative
   text: Relies on the Section 12.4 "Changes in Law" clause as the mechanism that obligates Meridian to amend the ASA, even though section 724 was enacted in December 2020 and is not a change in law enacted after the January 1, 2024 Effective Date.
-  grader_notes: Negative criterion. PASS if the memo does not invoke 12.4 as the lever, or expressly explains why 12.4 does not apply. FAIL if the memo recommends invoking 12.4 or states that Meridian is obligated under 12.4 to negotiate the amendment.
+  grader_notes: PASS if the memo does not invoke 12.4 as the lever, or expressly explains why 12.4 does not apply. FAIL if the memo recommends invoking 12.4 or states that Meridian is obligated under 12.4 to negotiate the amendment.
 - id: c22
   category: format
   deliverable: memo.md
-  text: Is formatted as a memorandum addressed to Dana Okafor and opens with an executive summary that states the bottom-line conclusions before the detailed analysis.
+  polarity: positive
+  text: Is formatted as a memorandum addressed to Dana Okafor, opens with an executive summary that states the bottom-line conclusions before the detailed analysis, and states an explicit confidence level (or equivalent calibration) for each challenged Article 9 provision.
+  grader_notes: The GC asked "how confident are we" and "where the law is unclear, say so". Pass requires the executive summary first and per-provision confidence language (high/moderate/low, likely/unsettled, or similar) for at least 9.3, 9.4, 9.5 and 9.6.
+- id: c23
+  category: legal_analysis
+  deliverable: memo.md
+  polarity: positive
+  text: Explains that for failures due to reasonable cause and not willful neglect, section 4980D(c)(3) caps the excise tax for a taxable year at the lesser of 10 percent of the employer's group health plan payments for the preceding taxable year or $500,000, and uses that cap (not $100 per day multiplied by covered lives) as the realistic ceiling on the Plan Sponsor's tax exposure.
+  grader_notes: The CFO asked for a realistic number. $100/day x ~14,800 covered individuals is ~$1.48 million per day and is not the realistic exposure for an unintentional failure. Pass requires the 4980D(c)(3) cap (lesser of 10% of prior-year GHP payments or $500,000); given ~$73 million in 2025 plan spend, the $500,000 limb applies. A memo that only quotes $100/day/individual, or that quotes an aggregate daily figure without the cap, fails. Mentioning the 4980D(c)(4) waiver authority is a plus but not required.
+- id: c24
+  category: legal_analysis
+  deliverable: memo.md
+  polarity: positive
+  text: Identifies the section 4980D(c)(1)-(2) exceptions (no tax where the failure was not known and would not have been discovered with reasonable diligence; no tax where a reasonable-cause failure is corrected within 30 days after the person knew or should have known) and analyzes when the Plan Sponsor's knowledge was triggered, rather than assuming the Plan can simply correct within 30 days starting now.
+  grader_notes: Pass requires both naming the 30-day correction window (or the reasonable-diligence exception) and engaging with the trigger date - the Plan signed the ASA with Article 9 on its face in December 2023 (so "reasonable diligence" arguably ran from then), and at the latest knew of the restrictions when Meridian applied them on September 18, 2026 (so the 30 days ran to about October 18). The intended conclusion is that the (c)(1)/(c)(2) exceptions are probably unavailable or nearly expired and the Plan should instead rely on prompt correction, the (c)(3) cap, (c)(4) waiver and a documented reasonable-cause record (Meridian's November 2024 confirmation). A memo that mentions "30 days" without engaging with when the clock started fails.
+- id: c25
+  category: fact_use
+  deliverable: memo.md
+  polarity: positive
+  text: Notes that Northgate's requested period (October 1, 2023 through September 30, 2026) begins before Meridian's January 1, 2024 effective date, so that fourth-quarter 2023 claims must be sourced from the Cordell final claims file on the Benefits shared drive (or from Cordell), not from Meridian, and that Meridian's extract should be scoped to claims it adjudicated from January 1, 2024.
+  grader_notes: Synthesis of docs 01, 04 and 06. Pass if the memo spots the three-month mismatch and points to the Cordell file (or Cordell) as the source. A memo that treats the full 36 months as obtainable from Meridian fails. Noting that the Cordell file is already in a layout with allowed amounts and NPIs, and is outside the Meridian ASA restrictions, is a plus.
+- id: c26
+  category: legal_analysis
+  deliverable: memo.md
+  polarity: positive
+  text: Recognizes that Northgate's field list as drafted (full dates of service, claim received and paid dates) does not satisfy the HIPAA safe harbor for de-identification in 45 C.F.R. 164.514(b)(2), and advises a compliant structure for the disclosure - a limited data set under 164.514(e) with a data use agreement, disclosure of PHI to Northgate and Claimsight as the Plan's business associates for the Plan's health care operations, or an expert determination - rather than treating the request as de-identified data as drafted.
+  grader_notes: The safe harbor requires removal of all elements of dates (except year) directly related to an individual; service dates are such dates. Pass requires (i) identifying the dates problem and (ii) proposing at least one compliant route. The BAA excerpt (Section 3.2 - PHI to "a person designated by Covered Entity" for health care operations including evaluating the business associate) is a hook. A memo that simply calls the requested data "de-identified" fails; a memo that stops at "the data must be de-identified" without addressing the dates fails.
+- id: c27
+  category: negative
+  deliverable: memo.md
+  polarity: negative
+  text: Endorses the Chair's request that the full claim-level file be circulated to Benefits Committee members (or otherwise recommends delivery of claim-level data containing dates of service or other PHI identifiers to Halvorsen personnel) without addressing the limits in Plan Section 8.7 and 45 C.F.R. 164.504(f) on PHI disclosure to the plan sponsor.
+  grader_notes: Negative criterion. Plan 8.7(c) and Appendix B permit PHI for plan administration functions only to the Director, Benefits, Benefits Analyst, Payroll Benefits Specialist and (for limited purposes) General Counsel; the CFO, VP HR and Controller may receive only summary health information or HIPAA de-identified data. FAIL if the memo accepts the Chair's request as stated, or recommends the raw extract be sent to "the Committee" or "Halvorsen", without the firewall analysis. PASS if the memo routes PHI/limited data set to the Plan's business associates, limits what the Committee sees to de-identified or summary data (or to Appendix B personnel), or otherwise addresses 8.7 / 164.504(f). Silence on the circulation request is a PASS only if the memo elsewhere confines PHI to business associates or Appendix B personnel.
+- id: c28
+  category: issue_spotting
+  deliverable: memo.md
+  polarity: positive
+  text: Flags that Northgate's $150,000 transition fee, payable only if the Plan moves to a new TPA or network after the market check, gives Northgate a financial interest in the outcome of the benchmarking and market check that the Committee must evaluate and document (for example by renegotiating the fee, requiring independent validation, or weighing Northgate's recommendations accordingly).
+  grader_notes: Fiduciary issue planted in docs 05 and 12. Pass requires identifying the contingent fee as a conflict and recommending a concrete response. A memo that mentions the fee without calling it a conflict, or that merely says Northgate is "independent", fails.
+- id: c29
+  category: legal_analysis
+  deliverable: memo.md
+  polarity: positive
+  text: Identifies that Northgate, as a consulting services provider to a group health plan expecting $1,000 or more in compensation, is a covered service provider under ERISA section 408(b)(2)(B) (added by CAA 2021 section 202), and recommends that the Committee confirm it received, or now obtain in writing, the required disclosure of direct and indirect compensation (including the contingent transition fee and the Marketplace participation fees from vendors that may respond to the market check) so that the engagement is a reasonable arrangement exempt from the prohibited transaction rules.
+  grader_notes: Pass requires naming 408(b)(2)(B) (or CAA section 202 / the group health plan broker and consultant compensation disclosure rule) and recommending the Committee confirm or obtain the disclosure. Noting that the SOW's section 7 was not furnished "reasonably in advance" of contracting and does not describe indirect compensation adequately, or that the fiduciary should request the disclosure in writing and notify DOL if it is not provided within 90 days, are strong signals but not required. A memo that discusses only the conflict without the 408(b)(2)(B) disclosure point fails this criterion (c28 covers the conflict).
+- id: c30
+  category: negative
+  deliverable: memo.md
+  polarity: negative
+  text: Asserts that implementing regulations exist under ERISA section 724 (for example by citing a 29 C.F.R. 2590.724-type provision), describes the Departments' FAQs as binding regulations, or asserts that ERISA or DOL regulations impose a specific per-day civil monetary penalty for a gag clause violation or attestation failure.
+  grader_notes: Negative criterion. There are no implementing regulations under section 724; the Departments have proceeded by FAQ (Parts 57 and 69) and the HIOS attestation instructions. ERISA section 502 contains no specific civil penalty for section 724 (502(c)(10) concerns genetic information, not gag clauses); DOL enforcement is through its general civil enforcement authority. The IRC 4980D excise tax is correctly cited and does not trigger this criterion. PASS if the memo cites only real authority and describes the FAQs as sub-regulatory guidance; FAIL on any of the three listed assertions.
+- id: c31
+  category: recommendation
+  deliverable: memo.md
+  polarity: positive
+  text: Advises that the Committee cannot discharge its monitoring duty by relying on Meridian Advisory Services' free "network performance report," because it would be the monitored vendor's affiliate evaluating its own affiliate's network, and that independent benchmarking with the underlying claim-level data is required (the report may at most be a supplementary input).
+  grader_notes: Planted in docs 03 and 05 (the Chair's "grading its own homework" comment). Pass requires rejecting the affiliate report as a substitute for independent benchmarking, with the conflict stated. Accepting it as a supplement is fine.
+- id: c32
+  category: issue_spotting
+  deliverable: memo.md
+  polarity: positive
+  text: Identifies that Section 12.5 (transition data delivered only in Meridian's standard format and "subject to Sections 9.4 and 9.5") together with Section 9.8 (three-year survival of 9.4 and 9.5) would restrict delivery of claim-level data to a successor administrator - itself a "Competitor" under Section 1.3 - and recommends that the amendment address transition and survival as well as Article 9.
+  grader_notes: Synthesis within doc 02. Pass requires linking 12.5 and/or 9.8 to the successor-administrator problem and recommending a fix. A memo that addresses only Article 9 fails.

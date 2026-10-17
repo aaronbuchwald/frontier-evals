@@ -13,9 +13,14 @@ Background
 
 Halvorsen Industrial Group sponsors a self-funded medical plan (about 6,200 employees, roughly
 14,800 covered lives). Meridian Health Administrators has been our TPA since January 1, 2024
-under a three-year administrative services agreement. Meridian administers claims and gives us
-access to its Meridian Choice provider network. Meridian is an affiliate of a national carrier;
-the network contracts are theirs, not ours.
+under a three-year administrative services agreement; before that we were with Cordell Benefit
+Services for about nine years. Meridian administers claims and gives us access to the Meridian
+Choice provider network. Meridian is a subsidiary of Continental Mutual Health, a national
+carrier; the Meridian Choice network and the provider contracts behind it belong to
+Continental, and Meridian uses them under an intercompany network access agreement. We have an
+excerpt of that intercompany agreement in the 2023 RFP binder (Meridian gave it to our
+then-consultant when we asked how network pricing would be reported); Priya is adding it to
+the folder along with Northgate's statement of work.
 
 In September our benefits consultant, Northgate Benefits Advisory, asked Meridian (through
 Priya) for 36 months of de-identified claim-level data so that Northgate can (a) benchmark
@@ -51,7 +56,12 @@ A memo I can take to the Committee on October 28 that answers:
 4. What amendment should we ask Meridian for, and how should we approach the negotiation
    given where we are in the contract term?
 
-Please also flag anything else the Committee, as plan fiduciary, should be thinking about.
+Please also flag anything else the Committee, as plan fiduciary, should be thinking about -
+including anything about how the data should move between Meridian, Northgate, Claimsight and
+us, and anything about the Northgate engagement itself. Rolf (our CFO, who chairs the
+Committee) has asked specifically what the realistic dollar exposure is if we have been out of
+compliance since 2024; he does not want a number we cannot explain.
+
 We have not yet raised any of this with Meridian's legal department; so far it has all been at
 the account-management level.
 
