@@ -91,7 +91,7 @@ def _read_idea(path: Path) -> str:
     return path.read_text()
 
 
-def _feedback_block(rec: IterationRecord | None, task: TaskSpec | None) -> str:
+def _feedback_block(rec: IterationRecord | None, task: "TaskSpec | None") -> str:
     if rec is None:
         return ""
     lines = ["## Feedback on the previous attempt", ""]
@@ -101,10 +101,25 @@ def _feedback_block(rec: IterationRecord | None, task: TaskSpec | None) -> str:
         lines.append(f"\nA strong solver model attempted the task in {len(rec.solver_runs)} fresh session(s); mean criteria pass rate = {rec.mean_pass_rate:.0%}.")
         easy = [cid for cid, r in rec.per_criterion_pass.items() if r >= 0.99]
         hard = [cid for cid, r in rec.per_criterion_pass.items() if r <= 0.01]
+        crit_text = {c.id: c.text for c in task.criteria} if task else {}
         if easy:
-            lines.append(f"Criteria the solver always passed (consider whether they test anything hard, or sharpen them): {', '.join(easy)}")
+            lines.append(f"Criteria the solver always passed ({len(easy)}/{len(rec.per_criterion_pass)}): {', '.join(easy)}")
         if hard:
-            lines.append(f"Criteria the solver always failed (make sure they are fair, verifiable and not trick questions): {', '.join(hard)}")
+            lines.append(f"Criteria the solver always failed (check they are fair and verifiable): {', '.join(hard)}")
+            lines += [f"  - [{cid}] {crit_text.get(cid, '')[:300]}" for cid in hard]
+        lines += ["",
+                  "IMPORTANT: the acceptance metric is the solver's MEAN criteria pass rate. Adding more criteria that the",
+                  "solver will also pass does not lower it; the previous revision grew the rubric without moving the",
+                  "number. To lower the mean you must raise the share of criteria the solver gets wrong. Do that by:",
+                  "(1) reading the solver's deliverable below and identifying its actual errors, omissions, hedges and",
+                  "    unsupported assertions, then writing criteria (positive or negative) that a careful lawyer would",
+                  "    agree are required and that this deliverable fails;",
+                  "(2) replacing criteria that any competent associate passes with criteria that require a specific",
+                  "    conclusion, number, date, or cross-document synthesis the solver missed;",
+                  "(3) changing the fact pattern so the correct answer is counter-intuitive or depends on a document",
+                  "    the solver ignored, rather than adding more issues of the same kind;",
+                  "(4) keeping the rubric compact (prefer 12-25 criteria) and every criterion fair and lawyer-defensible.",
+                  "Never lower the pass rate by making criteria obscure, ambiguous, or trick questions."]
         for run in rec.solver_runs[:1]:
             if run.get("deliverable_excerpt"):
                 lines += ["", "Excerpt of the solver's deliverable (so you can see what it got right and where it was shallow):",
@@ -261,7 +276,13 @@ def run_research(*, idea_file: Path, package_dir: Path, generator: AgentConfig, 
         if prev is not None and Path(prev.task_dir).exists():
             shutil.copytree(prev.task_dir, task_out)
         log(f"[research] iteration {it}/{iterations}: generating with {generator.name} ({generator.model})")
-        prompt = generator_prompt(idea, format_doc, pkg, task_id, "task", _feedback_block(prev, None),
+        prev_task = None
+        if prev is not None and Path(prev.task_dir).exists():
+            try:
+                prev_task = TaskSpec.load(prev.task_dir)
+            except Exception:  # noqa: BLE001
+                prev_task = None
+        prompt = generator_prompt(idea, format_doc, pkg, task_id, "task", _feedback_block(prev, prev_task),
                                   task_out if prev else None)
         (it_dir / "generator_prompt.md").write_text(prompt)
         t0 = time.time()
@@ -363,6 +384,9 @@ def render_research_log(rlog: ResearchLog) -> str:
                   f"- costs: gen ${rec.generator_cost_usd:.2f} solver ${rec.solver_cost_usd:.2f} judge ${rec.judge_cost_usd:.2f} qa ${rec.qa_cost_usd:.2f}",
                   "- reasons: " + ("; ".join(rec.reasons) or "none"), ""]
         if rec.per_criterion_pass:
+            all_pass = [bool(r.get("all_pass")) for r in rec.solver_runs if r.get("all_pass") is not None]
+            if all_pass:
+                lines.append(f"- all-pass (Harvey LAB scoring) rate: {sum(all_pass)}/{len(all_pass)}")
             lines.append("| criterion | solver pass rate |\n|---|---|")
             lines += [f"| {k} | {v:.0%} |" for k, v in rec.per_criterion_pass.items()]
             lines.append("")
